@@ -1189,3 +1189,40 @@ body.layout-tools .container {
   color: var(--accent);
   font-weight: 600;
 }
+
+
+/* --- Edit this page --- */
+
+.edit-link {
+  margin-bottom: 0.5rem;
+}
+
+.edit-link a {
+  font-family: var(--heading-font);
+  font-size: 0.75rem;
+  color: var(--text-light);
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.edit-link a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* --- No-JS fallback for tools --- */
+
+.tool-noscript {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: var(--bg-alt);
+  border-radius: 4px;
+  margin: 1rem 0;
+  color: var(--text-light);
+}
+
+.tool-noscript strong {
+  color: var(--text);
+}

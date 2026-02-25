@@ -61,11 +61,16 @@
         isOpen = true;
         panel.style.display = 'block';
         trigger.setAttribute('aria-expanded', 'true');
+        // Move focus to first interactive element in panel
+        var firstInput = panel.querySelector('input, button');
+        if (firstInput) firstInput.focus();
       }
       function closePanel() {
         isOpen = false;
         panel.style.display = 'none';
         trigger.setAttribute('aria-expanded', 'false');
+        // Return focus to trigger
+        trigger.focus();
       }
       trigger.addEventListener('click', function(e) {
         e.stopPropagation();

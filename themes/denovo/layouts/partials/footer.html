@@ -1,3 +1,14 @@
 <footer class="site-footer">
-  <p class="footer-text">&copy; {{ now.Year }} {{ .Site.Params.author }} · De Novo</p>
+  {{- if and .File .IsPage }}
+  <div class="edit-link">
+    <a href="{{ .Site.Params.github }}/edit/main/content/{{ .File.Path }}" target="_blank" rel="noopener">
+      Edit this page on GitHub
+    </a>
+  </div>
+  {{- end }}
+  <p class="footer-text">
+    &copy; {{ now.Year }} {{ .Site.Params.author }} · De Novo
+    · <a href="{{ "/licenses/" | absURL }}">Licenses</a>
+    · <a href="{{ .Site.Params.github }}/issues" target="_blank" rel="noopener">Report an issue</a>
+  </p>
 </footer>

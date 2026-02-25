@@ -4,7 +4,17 @@
     <h1>{{ .Title }}</h1>
     {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
   </div>
-  <div class="tool-container">
+  <noscript>
+    <div class="tool-noscript">
+      <p><strong>This tool requires JavaScript to run.</strong></p>
+      {{ with .Params.noscript_description }}
+      <p>{{ . }}</p>
+      {{ else }}
+      <p>{{ .Title }} is an interactive tool that needs a browser with JavaScript enabled. If you're on a school network that blocks scripts, try accessing this page from a personal device.</p>
+      {{ end }}
+    </div>
+  </noscript>
+  <div class="tool-container js-only">
     <div class="tool-loading" id="tool-loading">
       <div class="tool-spinner"></div>
       <p>Loading...</p>
@@ -19,9 +29,6 @@
   </div>
 </article>
 <script>
-  // Tools can call these helpers:
-  // toolReady() — hides spinner, shows app
-  // toolError(msg) — hides spinner, shows error with optional message
   window.toolReady = function() {
     document.getElementById('tool-loading').style.display = 'none';
     document.getElementById('tool-app').style.opacity = '1';
@@ -32,7 +39,6 @@
     if (msg) err.querySelector('p').textContent = msg;
     err.style.display = 'block';
   };
-  // Auto-hide loading after content renders (for static tools)
   if (document.getElementById('tool-app').children.length > 0) {
     window.toolReady();
   }
