@@ -31,8 +31,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
-          with:
-            fetch-depth: 0
+        with:
+          fetch-depth: 0
 
       - name: Setup Pages
         id: pages
@@ -48,6 +48,96 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      # --- Quality Gates ---
+
+      - name: Check for images without alt text in content
+        run: |
+          echo "Checking for images without alt text..."
+          FAILURES=0
+          # Check markdown image syntax: ![](url) with empty alt
+          for f in $(find content -name '*.md' -type f); do
+            # Match ![](anything) — empty alt bracket
+            if grep -Pn '!\[\]\(' "$f"; then
+              echo "❌ Missing alt text in: $f"
+              FAILURES=$((FAILURES + 1))
+            fi
+          done
+          # Check HTML img tags without alt
+          for f in $(find content -name '*.md' -type f); do
+            if grep -Pn '<img[^>]*(?<!alt=)[^>]*/?>' "$f" 2>/dev/null | grep -v 'alt='; then
+              echo "❌ HTML img without alt in: $f"
+              FAILURES=$((FAILURES + 1))
+            fi
+          done
+          if [ "$FAILURES" -gt 0 ]; then
+            echo ""
+            echo "⚠️  Found $FAILURES file(s) with missing alt text."
+            echo "Every image needs alt text for accessibility."
+            exit 1
+          fi
+          echo "✅ All images have alt text."
+
+      - name: Check for broken internal links
+        run: |
+          echo "Checking for broken internal links..."
+          FAILURES=0
+          # Find all internal href links in built HTML
+          for f in $(find public -name '*.html' -type f); do
+            # Extract internal links (starting with / but not //)
+            for link in $(grep -oP 'href="(/[^"]*)"' "$f" | grep -oP '"/[^"]*"' | tr -d '"' | sort -u); do
+              # Skip anchors-only, mailto, tel
+              [[ "$link" == "#"* ]] && continue
+              # Strip anchor from link for file check
+              path="${link%%#*}"
+              # Convert URL path to file path
+              target="public${path}"
+              # Check if it exists as file or directory with index.html
+              if [ ! -f "$target" ] && [ ! -f "${target}index.html" ] && [ ! -f "${target}/index.html" ]; then
+                echo "❌ Broken link in $(echo $f | sed 's|public/||'): $link"
+                FAILURES=$((FAILURES + 1))
+              fi
+            done
+          done
+          if [ "$FAILURES" -gt 0 ]; then
+            echo ""
+            echo "⚠️  Found $FAILURES broken internal link(s)."
+            exit 1
+          fi
+          echo "✅ All internal links valid."
+
+      - name: Validate HTML structure
+        run: |
+          echo "Checking HTML structure..."
+          FAILURES=0
+          for f in $(find public -name '*.html' -type f); do
+            PAGE=$(echo "$f" | sed 's|public/||')
+            # Check for exactly one <main> element
+            MAIN_COUNT=$(grep -c '<main' "$f" || true)
+            if [ "$MAIN_COUNT" -ne 1 ]; then
+              echo "❌ $PAGE has $MAIN_COUNT <main> elements (expected 1)"
+              FAILURES=$((FAILURES + 1))
+            fi
+            # Check for exactly one <h1>
+            H1_COUNT=$(grep -c '<h1' "$f" || true)
+            if [ "$H1_COUNT" -gt 1 ]; then
+              echo "❌ $PAGE has $H1_COUNT <h1> elements (expected 1)"
+              FAILURES=$((FAILURES + 1))
+            fi
+            # Check that <html> has a lang attribute
+            if ! grep -q '<html lang=' "$f"; then
+              echo "❌ $PAGE missing lang attribute on <html>"
+              FAILURES=$((FAILURES + 1))
+            fi
+          done
+          if [ "$FAILURES" -gt 0 ]; then
+            echo ""
+            echo "⚠️  Found $FAILURES HTML structure issue(s)."
+            exit 1
+          fi
+          echo "✅ HTML structure valid."
+
+      # --- End Quality Gates ---
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
