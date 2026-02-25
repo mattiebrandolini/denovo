@@ -9,5 +9,80 @@
       {{- end }}
     </nav>
   </div>
-  <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
+  <div class="a11y-controls">
+    <button class="a11y-trigger" aria-label="Accessibility settings" aria-expanded="false" title="Accessibility settings">⚙</button>
+    <div class="a11y-panel" role="dialog" aria-label="Accessibility settings">
+      <h3>Display</h3>
+
+      <div class="a11y-option">
+        <label for="a11y-dark">
+          Dark mode
+        </label>
+        <span class="toggle-switch">
+          <input type="checkbox" id="a11y-dark">
+          <span class="toggle-slider"></span>
+        </span>
+      </div>
+
+      <div class="a11y-option">
+        <label for="a11y-motion">
+          Reduced motion
+        </label>
+        <span class="toggle-switch">
+          <input type="checkbox" id="a11y-motion">
+          <span class="toggle-slider"></span>
+        </span>
+      </div>
+
+      <hr class="a11y-divider">
+      <h3>Reading</h3>
+
+      <div class="a11y-option">
+        <label for="a11y-dyslexic">
+          Dyslexic-friendly font
+          <span class="a11y-desc">OpenDyslexic</span>
+        </label>
+        <span class="toggle-switch">
+          <input type="checkbox" id="a11y-dyslexic">
+          <span class="toggle-slider"></span>
+        </span>
+      </div>
+
+      <div class="a11y-option">
+        <label>
+          Text size
+        </label>
+        <div class="size-selector">
+          <button class="size-btn" data-size="small">A</button>
+          <button class="size-btn" data-size="medium">A</button>
+          <button class="size-btn" data-size="large">A</button>
+        </div>
+      </div>
+
+      <div class="a11y-option">
+        <label for="a11y-spacing">
+          Wide line spacing
+          <span class="a11y-desc">Easier reading for ELL &amp; low vision</span>
+        </label>
+        <span class="toggle-switch">
+          <input type="checkbox" id="a11y-spacing">
+          <span class="toggle-slider"></span>
+        </span>
+      </div>
+
+      <hr class="a11y-divider">
+      <h3>Vision</h3>
+
+      <div class="a11y-option">
+        <label for="a11y-colorblind">
+          Colorblind-safe
+          <span class="a11y-desc">Shapes &amp; labels instead of color-only</span>
+        </label>
+        <span class="toggle-switch">
+          <input type="checkbox" id="a11y-colorblind">
+          <span class="toggle-slider"></span>
+        </span>
+      </div>
+    </div>
+  </div>
 </header>

@@ -9,9 +9,13 @@
   --accent-light: #4a7d6e;
   --border: #e0ddd6;
   --max-width: 660px;
-  --toggle-icon: "☽";
+  --body-font: 'Lora', Georgia, serif;
+  --heading-font: 'Cormorant', Georgia, serif;
+  --base-size: 18px;
+  --line-height: 1.75;
 }
 
+/* === DARK MODE === */
 [data-theme="dark"] {
   --text: #e0ddd6;
   --text-light: #9a9590;
@@ -20,8 +24,82 @@
   --accent: #6aab97;
   --accent-light: #7fc4ad;
   --border: #3a3835;
-  --toggle-icon: "☀";
 }
+
+/* === TEXT SIZE === */
+[data-textsize="small"]  { --base-size: 15px; }
+[data-textsize="medium"] { --base-size: 18px; }
+[data-textsize="large"]  { --base-size: 22px; }
+
+/* === LINE SPACING === */
+[data-linespacing="wide"] { --line-height: 2.2; }
+[data-linespacing="wide"] p { margin-bottom: 1.6rem; }
+[data-linespacing="wide"] .post-list li { padding: 1.5rem 0; }
+
+/* === DYSLEXIC FONT === */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+[data-font="dyslexic"] {
+  --body-font: 'OpenDyslexic', Georgia, serif;
+  --heading-font: 'OpenDyslexic', Georgia, serif;
+}
+[data-font="dyslexic"] body { word-spacing: 0.12em; letter-spacing: 0.02em; }
+[data-font="dyslexic"] h1, [data-font="dyslexic"] h2, [data-font="dyslexic"] h3 {
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+[data-font="dyslexic"] .site-title { text-transform: none; letter-spacing: 0.02em; }
+
+/* === REDUCED MOTION === */
+[data-motion="reduced"] *,
+[data-motion="reduced"] *::before,
+[data-motion="reduced"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* === COLORBLIND MODE === */
+/* This primarily affects the interactive tools/apps we'll build later.
+   For the text site, we ensure links and accents aren't color-only. */
+[data-colorblind="on"] a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+[data-colorblind="on"] nav.site-nav a.active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+[data-colorblind="on"] .post-list li {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+/* ==================== */
+/* BASE STYLES          */
+/* ==================== */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -30,15 +108,15 @@
 }
 
 html {
-  font-size: 18px;
+  font-size: var(--base-size);
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Lora', Georgia, serif;
+  font-family: var(--body-font);
   color: var(--text);
   background: var(--bg);
-  line-height: 1.75;
+  line-height: var(--line-height);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -68,7 +146,7 @@ header.site-header {
 }
 
 .site-title {
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: var(--heading-font);
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: 0.08em;
@@ -86,7 +164,7 @@ nav.site-nav {
 }
 
 nav.site-nav a {
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: var(--heading-font);
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.06em;
@@ -101,9 +179,15 @@ nav.site-nav a.active {
   color: var(--accent);
 }
 
-/* --- Theme Toggle --- */
+/* --- Accessibility Panel --- */
 
-.theme-toggle {
+.a11y-controls {
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.a11y-trigger {
   background: none;
   border: 1px solid var(--border);
   border-radius: 50%;
@@ -117,17 +201,149 @@ nav.site-nav a.active {
   justify-content: center;
   color: var(--text-light);
   transition: border-color 0.2s ease, color 0.2s ease;
-  margin-top: 0.25rem;
-  flex-shrink: 0;
 }
 
-.theme-toggle:hover {
+.a11y-trigger:hover,
+.a11y-trigger[aria-expanded="true"] {
   border-color: var(--accent);
   color: var(--accent);
 }
 
-.theme-toggle::after {
-  content: var(--toggle-icon);
+.a11y-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  min-width: 240px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .a11y-panel {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.a11y-panel.open {
+  display: block;
+}
+
+.a11y-panel h3 {
+  font-family: var(--heading-font);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin: 0 0 0.75rem 0;
+}
+
+.a11y-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+}
+
+.a11y-option label {
+  font-size: 0.85rem;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.a11y-option .a11y-desc {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-light);
+  margin-top: 0.1rem;
+}
+
+/* Toggle switch */
+.toggle-switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--border);
+  border-radius: 20px;
+  transition: background 0.2s ease;
+}
+
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background: var(--bg);
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background: var(--accent);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(16px);
+}
+
+.toggle-switch input:focus-visible + .toggle-slider {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Size selector */
+.size-selector {
+  display: flex;
+  gap: 0.25rem;
+  margin-left: 0.75rem;
+}
+
+.size-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.7rem;
+  font-family: var(--heading-font);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.size-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.size-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.a11y-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0.5rem 0;
 }
 
 /* --- Main Content --- */
@@ -140,7 +356,7 @@ main {
 /* --- Typography --- */
 
 h1, h2, h3, h4 {
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: var(--heading-font);
   font-weight: 400;
   line-height: 1.25;
 }
@@ -211,7 +427,7 @@ pre code {
 .page-meta {
   font-size: 0.85rem;
   color: var(--text-light);
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: var(--heading-font);
   letter-spacing: 0.03em;
 }
 
@@ -231,6 +447,7 @@ pre code {
 .post-list li {
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s ease, padding-left 0.2s ease;
 }
 
 .post-list li:first-child {
@@ -251,7 +468,7 @@ pre code {
 }
 
 .post-title {
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: var(--heading-font);
   font-size: 1.35rem;
   font-weight: 400;
   line-height: 1.3;
@@ -261,7 +478,7 @@ pre code {
 .post-date {
   font-size: 0.8rem;
   color: var(--text-light);
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: var(--heading-font);
   letter-spacing: 0.03em;
 }
 
@@ -316,16 +533,17 @@ footer.site-footer {
 .footer-text {
   font-size: 0.8rem;
   color: var(--text-light);
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: var(--heading-font);
   letter-spacing: 0.03em;
 }
 
 /* --- Responsive --- */
 
 @media (max-width: 600px) {
-  html { font-size: 16px; }
+  html { font-size: calc(var(--base-size) - 2px); }
   header.site-header { padding: 2rem 0 1.5rem; }
   .site-title { font-size: 1.6rem; }
   h1 { font-size: 1.75rem; }
   nav.site-nav a { margin-right: 1.25rem; }
+  .a11y-panel { min-width: 220px; right: -0.5rem; }
 }

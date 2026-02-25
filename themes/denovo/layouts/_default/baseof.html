@@ -6,11 +6,34 @@
   <title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <script>
+    // Apply all settings immediately to prevent flash
     (function() {
-      var saved = localStorage.getItem('theme');
-      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+      var d = document.documentElement;
+      var s = localStorage;
+
+      // Dark mode
+      var theme = s.getItem('dn-theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        d.setAttribute('data-theme', 'dark');
       }
+
+      // Text size
+      var size = s.getItem('dn-textsize');
+      if (size) d.setAttribute('data-textsize', size);
+
+      // Line spacing
+      if (s.getItem('dn-spacing') === 'on') d.setAttribute('data-linespacing', 'wide');
+
+      // Dyslexic font
+      if (s.getItem('dn-font') === 'dyslexic') d.setAttribute('data-font', 'dyslexic');
+
+      // Reduced motion
+      if (s.getItem('dn-motion') === 'on' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        d.setAttribute('data-motion', 'reduced');
+      }
+
+      // Colorblind
+      if (s.getItem('dn-colorblind') === 'on') d.setAttribute('data-colorblind', 'on');
     })();
   </script>
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
@@ -24,16 +47,109 @@
     {{ partial "footer.html" . }}
   </div>
   <script>
-    document.querySelector('.theme-toggle').addEventListener('click', function() {
-      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+    (function() {
+      var d = document.documentElement;
+      var s = localStorage;
+      var panel = document.querySelector('.a11y-panel');
+      var trigger = document.querySelector('.a11y-trigger');
+
+      // --- Panel open/close ---
+      trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var open = panel.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', open);
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!panel.contains(e.target) && e.target !== trigger) {
+          panel.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          panel.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // --- Helper: toggle a data attribute ---
+      function bindToggle(id, storageKey, attr, onVal) {
+        var el = document.getElementById(id);
+        // Set initial state from DOM
+        el.checked = d.hasAttribute(attr);
+        el.addEventListener('change', function() {
+          if (el.checked) {
+            d.setAttribute(attr, onVal);
+            s.setItem(storageKey, 'on');
+          } else {
+            d.removeAttribute(attr);
+            s.removeItem(storageKey);
+          }
+        });
       }
-    });
+
+      // --- Dark mode ---
+      var darkToggle = document.getElementById('a11y-dark');
+      darkToggle.checked = d.getAttribute('data-theme') === 'dark';
+      darkToggle.addEventListener('change', function() {
+        if (darkToggle.checked) {
+          d.setAttribute('data-theme', 'dark');
+          s.setItem('dn-theme', 'dark');
+        } else {
+          d.removeAttribute('data-theme');
+          s.setItem('dn-theme', 'light');
+        }
+      });
+
+      // --- Reduced motion ---
+      bindToggle('a11y-motion', 'dn-motion', 'data-motion', 'reduced');
+
+      // --- Dyslexic font ---
+      var dyslexicToggle = document.getElementById('a11y-dyslexic');
+      dyslexicToggle.checked = d.getAttribute('data-font') === 'dyslexic';
+      dyslexicToggle.addEventListener('change', function() {
+        if (dyslexicToggle.checked) {
+          d.setAttribute('data-font', 'dyslexic');
+          s.setItem('dn-font', 'dyslexic');
+        } else {
+          d.removeAttribute('data-font');
+          s.removeItem('dn-font');
+        }
+      });
+
+      // --- Line spacing ---
+      bindToggle('a11y-spacing', 'dn-spacing', 'data-linespacing', 'wide');
+
+      // --- Colorblind ---
+      bindToggle('a11y-colorblind', 'dn-colorblind', 'data-colorblind', 'on');
+
+      // --- Text size ---
+      var sizeBtns = document.querySelectorAll('.size-btn');
+      var currentSize = d.getAttribute('data-textsize') || 'medium';
+
+      function setSize(size) {
+        sizeBtns.forEach(function(b) {
+          b.classList.toggle('active', b.getAttribute('data-size') === size);
+        });
+        if (size === 'medium') {
+          d.removeAttribute('data-textsize');
+          s.removeItem('dn-textsize');
+        } else {
+          d.setAttribute('data-textsize', size);
+          s.setItem('dn-textsize', size);
+        }
+      }
+
+      setSize(currentSize);
+
+      sizeBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          setSize(btn.getAttribute('data-size'));
+        });
+      });
+    })();
   </script>
 </body>
 </html>
