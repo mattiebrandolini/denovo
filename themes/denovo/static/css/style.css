@@ -545,3 +545,25 @@ footer.site-footer {
   nav.site-nav a { margin-right: 1.25rem; }
   .a11y-panel { min-width: 220px; right: -0.5rem; }
 }
+
+/* --- Tools Pages --- */
+
+.tool-page { width: 100%; }
+
+.tool-container {
+  max-width: none;
+  padding: 0;
+}
+
+.tool-container iframe,
+.tool-container canvas,
+.tool-container .tool-app {
+  width: 100%;
+  min-height: 70vh;
+  border: none;
+}
+
+/* When a tool page is active, widen the container */
+body.layout-tools .container {
+  max-width: 1100px;
+}

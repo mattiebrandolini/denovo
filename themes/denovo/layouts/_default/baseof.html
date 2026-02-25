@@ -23,9 +23,20 @@
       if (s.getItem('dn-colorblind') === 'on') d.setAttribute('data-colorblind', 'on');
     })();
   </script>
+  <link rel="icon" href="{{ "favicon.ico" | absURL }}" type="image/x-icon">
+  <link rel="icon" href="{{ "favicon.png" | absURL }}" type="image/png">
+  {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">{{ end }}
+  <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ .Site.Title }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ .Site.Title }}">
+  <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 </head>
-<body>
+<body class="{{ with .Section }}layout-{{ . }}{{ end }}">
   <div class="container">
     {{ partial "header.html" . }}
     <main>

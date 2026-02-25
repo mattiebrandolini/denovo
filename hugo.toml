@@ -28,11 +28,19 @@ theme = 'denovo'
     url = "/fiction/"
     weight = 3
   [[menu.main]]
+    name = "Rules"
+    url = "/rules/"
+    weight = 4
+  [[menu.main]]
+    name = "Tools"
+    url = "/tools/"
+    weight = 5
+  [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 4
+    weight = 6
 
 [outputs]
-  home = ["HTML"]
-  section = ["HTML"]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
   page = ["HTML"]

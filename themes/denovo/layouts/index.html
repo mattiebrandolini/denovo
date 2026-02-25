@@ -3,7 +3,7 @@
   {{ .Content }}
 </div>
 
-{{ $sections := slice "essays" "worlds" "fiction" }}
+{{ $sections := slice "essays" "worlds" "fiction" "rules" "tools" }}
 {{ range $sections }}
   {{ $pages := where $.Site.RegularPages "Section" . }}
   {{ if $pages }}

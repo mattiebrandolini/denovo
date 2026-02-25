@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+</div>
+
+{{ if .Content }}
+<div class="section-intro">
+  {{ .Content }}
+</div>
+{{ end }}
+
+<ul class="post-list">
+  {{ range .Pages }}
+  <li>
+    <a href="{{ .RelPermalink }}">
+      <div class="post-title">{{ .Title }}</div>
+      {{ with .Params.description }}<div class="post-summary">{{ . }}</div>{{ end }}
+    </a>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
