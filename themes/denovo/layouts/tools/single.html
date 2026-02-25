@@ -5,7 +5,36 @@
     {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
   </div>
   <div class="tool-container">
-    {{ .Content }}
+    <div class="tool-loading" id="tool-loading">
+      <div class="tool-spinner"></div>
+      <p>Loading...</p>
+    </div>
+    <div class="tool-error" id="tool-error" style="display:none">
+      <p>Something went wrong loading this tool.</p>
+      <button onclick="location.reload()">Try again</button>
+    </div>
+    <div class="tool-app" id="tool-app">
+      {{ .Content }}
+    </div>
   </div>
 </article>
+<script>
+  // Tools can call these helpers:
+  // toolReady() — hides spinner, shows app
+  // toolError(msg) — hides spinner, shows error with optional message
+  window.toolReady = function() {
+    document.getElementById('tool-loading').style.display = 'none';
+    document.getElementById('tool-app').style.opacity = '1';
+  };
+  window.toolError = function(msg) {
+    document.getElementById('tool-loading').style.display = 'none';
+    var err = document.getElementById('tool-error');
+    if (msg) err.querySelector('p').textContent = msg;
+    err.style.display = 'block';
+  };
+  // Auto-hide loading after content renders (for static tools)
+  if (document.getElementById('tool-app').children.length > 0) {
+    window.toolReady();
+  }
+</script>
 {{ end }}

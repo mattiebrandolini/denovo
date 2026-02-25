@@ -23,6 +23,9 @@
       if (s.getItem('dn-colorblind') === 'on') d.setAttribute('data-colorblind', 'on');
     })();
   </script>
+  <!-- Font preloading — eliminates flash of unstyled text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="{{ "favicon.ico" | absURL }}" type="image/x-icon">
   <link rel="icon" href="{{ "favicon.png" | absURL }}" type="image/png">
   {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">{{ end }}
@@ -37,9 +40,12 @@
   <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 </head>
 <body class="{{ with .Section }}layout-{{ . }}{{ end }}">
+  <!-- Skip-to-content for screen readers and keyboard nav -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <div class="container">
     {{ partial "header.html" . }}
-    <main>
+    <main id="main-content">
+      {{ partial "breadcrumbs.html" . }}
       {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}
@@ -52,7 +58,6 @@
       var trigger = document.querySelector('.a11y-trigger');
       var isOpen = false;
 
-      // --- Panel open/close ---
       function openPanel() {
         isOpen = true;
         panel.style.display = 'block';
@@ -76,7 +81,6 @@
         if (e.key === 'Escape' && isOpen) closePanel();
       });
 
-      // --- Make every toggle-switch area clickable ---
       document.querySelectorAll('.toggle-switch').forEach(function(sw) {
         sw.addEventListener('click', function(e) {
           var cb = sw.querySelector('input[type="checkbox"]');
@@ -87,7 +91,6 @@
         });
       });
 
-      // --- Also make labels toggle their checkboxes on click ---
       document.querySelectorAll('.a11y-option > label[for]').forEach(function(lbl) {
         lbl.addEventListener('click', function(e) {
           e.preventDefault();
@@ -99,10 +102,8 @@
         });
       });
 
-      // --- Setting handlers ---
       function get(id) { return document.getElementById(id); }
 
-      // Dark mode
       var darkCb = get('a11y-dark');
       darkCb.checked = d.getAttribute('data-theme') === 'dark';
       darkCb.addEventListener('change', function() {
@@ -115,7 +116,6 @@
         }
       });
 
-      // Reduced motion
       var motionCb = get('a11y-motion');
       motionCb.checked = d.hasAttribute('data-motion');
       motionCb.addEventListener('change', function() {
@@ -128,7 +128,6 @@
         }
       });
 
-      // Dyslexic font
       var dysCb = get('a11y-dyslexic');
       dysCb.checked = d.getAttribute('data-font') === 'dyslexic';
       dysCb.addEventListener('change', function() {
@@ -141,7 +140,6 @@
         }
       });
 
-      // Line spacing
       var spaceCb = get('a11y-spacing');
       spaceCb.checked = d.hasAttribute('data-linespacing');
       spaceCb.addEventListener('change', function() {
@@ -154,7 +152,6 @@
         }
       });
 
-      // Colorblind
       var cbCb = get('a11y-colorblind');
       cbCb.checked = d.hasAttribute('data-colorblind');
       cbCb.addEventListener('change', function() {
@@ -167,7 +164,6 @@
         }
       });
 
-      // Text size
       var sizeBtns = document.querySelectorAll('.size-btn');
       var currentSize = d.getAttribute('data-textsize') || 'medium';
       function setSize(size) {

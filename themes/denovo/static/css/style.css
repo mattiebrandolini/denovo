@@ -773,3 +773,122 @@ body.layout-tools .container {
     border-left-color: #999;
   }
 }
+
+/* --- Skip-to-content link --- */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 4px 4px;
+  font-family: var(--heading-font);
+  font-size: 0.85rem;
+  text-decoration: none;
+  z-index: 999;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* --- Breadcrumbs --- */
+
+.breadcrumbs {
+  font-family: var(--heading-font);
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.breadcrumbs a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--accent);
+}
+
+.bc-sep {
+  margin: 0 0.4rem;
+  opacity: 0.5;
+}
+
+.bc-current {
+  color: var(--text);
+}
+
+/* --- Tool Loading / Error States --- */
+
+.tool-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  color: var(--text-light);
+  font-family: var(--heading-font);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+}
+
+.tool-spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+[data-motion="reduced"] .tool-spinner {
+  animation: none;
+  border-top-color: var(--border);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.tool-app {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+[data-motion="reduced"] .tool-app {
+  transition: none;
+}
+
+.tool-error {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-light);
+}
+
+.tool-error p {
+  margin-bottom: 1rem;
+}
+
+.tool-error button {
+  font-family: var(--heading-font);
+  font-size: 0.85rem;
+  padding: 0.4rem 1.25rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tool-error button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
