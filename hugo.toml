@@ -1,0 +1,38 @@
+baseURL = 'https://mattiebrandolini.github.io/denovo/'
+languageCode = 'en-us'
+title = 'De Novo'
+theme = 'denovo'
+
+[params]
+  description = "Essays, fiction, and worldbuilding by Mattie Brandolini"
+  author = "Mattie Brandolini"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'monokailight'
+
+[menu]
+  [[menu.main]]
+    name = "Essays"
+    url = "/essays/"
+    weight = 1
+  [[menu.main]]
+    name = "Worlds"
+    url = "/worlds/"
+    weight = 2
+  [[menu.main]]
+    name = "Fiction"
+    url = "/fiction/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  page = ["HTML"]

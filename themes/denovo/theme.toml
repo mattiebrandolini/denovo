@@ -1,0 +1,7 @@
+name = "De Novo"
+license = "MIT"
+licenselink = ""
+description = "Custom minimal theme for De Novo"
+
+[author]
+  name = "Mattie Brandolini"

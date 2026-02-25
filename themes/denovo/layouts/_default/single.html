@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article>
+  <div class="page-header">
+    <h1>{{ .Title }}</h1>
+    <div class="page-meta">
+      {{ .Date.Format "January 2, 2006" }}
+      {{ with .Params.description }} · <span class="page-description">{{ . }}</span>{{ end }}
+    </div>
+  </div>
+  <div class="page-content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
