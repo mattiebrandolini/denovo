@@ -4,11 +4,35 @@
     <h1>{{ .Title }}</h1>
     <div class="page-meta">
       {{ .Date.Format "January 2, 2006" }}
+      · {{ .ReadingTime }} min read
       {{ with .Params.description }} · <span class="page-description">{{ . }}</span>{{ end }}
     </div>
+    {{ with .Params.tags }}
+    <div class="tag-list">
+      {{ range . }}<a href="{{ "/tags/" | absURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
   </div>
+
+  {{ if and (.Params.toc) (gt .WordCount 500) }}
+  <nav class="toc" aria-label="Table of contents">
+    <details>
+      <summary>Contents</summary>
+      {{ .TableOfContents }}
+    </details>
+  </nav>
+  {{ end }}
+
   <div class="page-content">
     {{ .Content }}
   </div>
+
+  {{ with .Params.tags }}
+  <footer class="post-footer">
+    <div class="tag-list">
+      {{ range . }}<a href="{{ "/tags/" | absURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
+    </div>
+  </footer>
+  {{ end }}
 </article>
 {{ end }}

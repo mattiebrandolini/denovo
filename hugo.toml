@@ -1,6 +1,7 @@
 baseURL = 'https://mattiebrandolini.github.io/denovo/'
 languageCode = 'en-us'
 title = 'De Novo'
+enableRobotsTXT = true
 theme = 'denovo'
 
 [params]
@@ -44,3 +45,9 @@ theme = 'denovo'
   home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
   page = ["HTML"]
+
+[taxonomies]
+  tag = "tags"
+
+[params.taxonomy]
+  taxonomyCloud = ["tags"]

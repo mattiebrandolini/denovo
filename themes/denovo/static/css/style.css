@@ -567,3 +567,209 @@ footer.site-footer {
 body.layout-tools .container {
   max-width: 1100px;
 }
+
+/* --- Tags --- */
+
+.tag-list {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag-pill {
+  display: inline-block;
+  font-family: var(--heading-font);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tag-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.tag-count {
+  opacity: 0.5;
+  margin-left: 0.2rem;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-cloud .tag-pill {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.75rem;
+}
+
+/* --- Post meta line (for tag term pages) --- */
+
+.post-meta-line {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.post-section {
+  font-family: var(--heading-font);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+/* --- Table of Contents --- */
+
+.toc {
+  margin: 1.5rem 0 2.5rem;
+  padding: 0;
+}
+
+.toc summary {
+  font-family: var(--heading-font);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.toc summary::-webkit-details-marker { display: none; }
+
+.toc summary::before {
+  content: "▸";
+  transition: transform 0.2s ease;
+  font-size: 0.7rem;
+}
+
+.toc[open] summary::before,
+.toc details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.toc nav, .toc #TableOfContents {
+  margin-top: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.toc > nav > ul,
+.toc > #TableOfContents > ul {
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 0.3rem 0;
+}
+
+.toc a {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--accent);
+}
+
+/* --- Post footer --- */
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* --- Print Stylesheet --- */
+
+@media print {
+  header.site-header,
+  footer.site-footer,
+  .a11y-controls,
+  .toc summary::before,
+  nav.site-nav {
+    display: none !important;
+  }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #555;
+  }
+
+  nav a[href]::after,
+  .tag-pill[href]::after {
+    content: none;
+  }
+
+  .tag-pill {
+    border-color: #999;
+    color: #333;
+  }
+
+  .toc {
+    break-inside: avoid;
+  }
+
+  .toc details {
+    open: true;
+  }
+
+  .toc details[open] summary {
+    margin-bottom: 0.5rem;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  pre {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+
+  blockquote {
+    border-left-color: #999;
+  }
+}

@@ -3,7 +3,7 @@ title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 date: {{ .Date }}
 description: ""
 tags: []
-toc: false
+toc: true
 draft: true
 ---
 

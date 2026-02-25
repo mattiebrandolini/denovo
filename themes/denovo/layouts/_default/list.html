@@ -15,9 +15,14 @@
   <li>
     <a href="{{ .RelPermalink }}">
       <div class="post-title">{{ .Title }}</div>
-      <div class="post-date">{{ .Date.Format "January 2, 2006" }}</div>
+      <div class="post-date">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
       {{ with .Params.description }}<div class="post-summary">{{ . }}</div>{{ end }}
     </a>
+    {{ with .Params.tags }}
+    <div class="tag-list">
+      {{ range . }}<a href="{{ "/tags/" | absURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
   </li>
   {{ end }}
 </ul>
