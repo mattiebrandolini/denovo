@@ -1,0 +1,12 @@
+{{- $term := .Get "term" -}}
+{{- $translation := .Get "translation" -}}
+{{- $lang := .Get "lang" -}}
+<dl class="definition">
+  <dt>
+    <strong>{{ $term }}</strong>
+    {{- with $translation }}
+    <span class="def-translation"{{ with $lang }} lang="{{ . }}"{{ end }}> ({{ . }})</span>
+    {{- end }}
+  </dt>
+  <dd>{{ .Inner | markdownify }}</dd>
+</dl>

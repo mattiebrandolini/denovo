@@ -1,0 +1,7 @@
+{{- $title := .Get "title" -}}
+<div class="steps">
+  {{- with $title }}<div class="steps-title">{{ . }}</div>{{ end }}
+  <div class="steps-body">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

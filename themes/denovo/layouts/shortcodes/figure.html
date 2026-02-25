@@ -1,0 +1,37 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- $caption := .Get "caption" -}}
+{{- $credit := .Get "credit" -}}
+{{- $class := .Get "class" | default "" -}}
+
+{{- if not $alt -}}
+  {{- errorf "Figure shortcode requires alt text for accessibility. File: %s" .Page.File.Path -}}
+{{- end -}}
+
+<figure class="fig {{ $class }}">
+  {{- /* Try to use Hugo image processing if it's a page resource */ -}}
+  {{- $img := .Page.Resources.GetMatch $src -}}
+  {{- if $img -}}
+    {{- $large := $img.Resize "1200x q85" -}}
+    {{- $medium := $img.Resize "800x q85" -}}
+    {{- $small := $img.Resize "480x q80" -}}
+    <img
+      src="{{ $medium.RelPermalink }}"
+      srcset="{{ $small.RelPermalink }} 480w, {{ $medium.RelPermalink }} 800w, {{ $large.RelPermalink }} 1200w"
+      sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
+      alt="{{ $alt }}"
+      width="{{ $medium.Width }}"
+      height="{{ $medium.Height }}"
+      loading="lazy"
+      decoding="async"
+    >
+  {{- else -}}
+    <img src="{{ $src | relURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  {{- end -}}
+  {{- if or $caption $credit }}
+  <figcaption>
+    {{- with $caption }}{{ . | markdownify }}{{ end -}}
+    {{- with $credit }} <cite>{{ . }}</cite>{{ end -}}
+  </figcaption>
+  {{- end }}
+</figure>

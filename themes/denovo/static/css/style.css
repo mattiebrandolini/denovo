@@ -1019,3 +1019,173 @@ body.layout-tools .container {
 .related-content .post-summary {
   font-size: 0.8rem;
 }
+
+/* ============================= */
+/* SHORTCODES                    */
+/* ============================= */
+
+/* --- Callout --- */
+
+.callout {
+  border-left: 3px solid var(--border);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+  background: var(--bg-alt);
+}
+
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+  font-family: var(--heading-font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.callout-body p:last-child { margin-bottom: 0; }
+
+.callout-note    { border-left-color: var(--accent); }
+.callout-warning { border-left-color: #c49a3c; }
+.callout-example { border-left-color: #6a8caf; }
+.callout-tip     { border-left-color: #7a9a5e; }
+
+.callout-note .callout-header    { color: var(--accent); }
+.callout-warning .callout-header { color: #c49a3c; }
+.callout-example .callout-header { color: #6a8caf; }
+.callout-tip .callout-header     { color: #7a9a5e; }
+
+[data-theme="dark"] .callout-warning .callout-header { color: #dbb85c; }
+[data-theme="dark"] .callout-example .callout-header { color: #8aaccc; }
+[data-theme="dark"] .callout-tip .callout-header     { color: #9aba7e; }
+
+/* --- Spoiler --- */
+
+.spoiler {
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.spoiler summary {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-family: var(--heading-font);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.spoiler summary::-webkit-details-marker { display: none; }
+
+.spoiler summary::before {
+  content: "▸";
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+.spoiler[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.spoiler-body {
+  padding: 0 1rem 0.75rem;
+}
+
+.spoiler-body p:last-child { margin-bottom: 0; }
+
+/* --- Definition --- */
+
+.definition {
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.definition dt {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.def-translation {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.definition dd {
+  margin: 0;
+  padding-left: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.definition dd p:last-child { margin-bottom: 0; }
+
+/* --- Figure --- */
+
+.fig {
+  margin: 2rem 0;
+}
+
+.fig img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+  display: block;
+}
+
+.fig figcaption {
+  font-family: var(--heading-font);
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.fig figcaption cite {
+  font-style: normal;
+  opacity: 0.7;
+}
+
+.fig figcaption cite::before {
+  content: "— ";
+}
+
+/* --- Steps --- */
+
+.steps {
+  margin: 1.5rem 0;
+}
+
+.steps-title {
+  font-family: var(--heading-font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.steps-body ol {
+  padding-left: 1.5rem;
+}
+
+.steps-body li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.steps-body li::marker {
+  color: var(--accent);
+  font-weight: 600;
+}
