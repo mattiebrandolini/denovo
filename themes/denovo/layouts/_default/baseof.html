@@ -41,53 +41,61 @@
       var trigger = document.querySelector('.a11y-trigger');
       var isOpen = false;
 
+      // --- Panel open/close ---
       function openPanel() {
         isOpen = true;
         panel.style.display = 'block';
         trigger.setAttribute('aria-expanded', 'true');
       }
-
       function closePanel() {
         isOpen = false;
         panel.style.display = 'none';
         trigger.setAttribute('aria-expanded', 'false');
       }
-
       trigger.addEventListener('click', function(e) {
         e.stopPropagation();
         if (isOpen) { closePanel(); } else { openPanel(); }
       });
-
       document.addEventListener('click', function(e) {
         if (isOpen && !panel.contains(e.target) && e.target !== trigger) {
           closePanel();
         }
       });
-
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && isOpen) closePanel();
       });
 
-      // --- Helper: toggle a data attribute ---
-      function bindToggle(id, storageKey, attr, onVal) {
-        var el = document.getElementById(id);
-        el.checked = d.hasAttribute(attr);
-        el.addEventListener('change', function() {
-          if (el.checked) {
-            d.setAttribute(attr, onVal);
-            s.setItem(storageKey, 'on');
-          } else {
-            d.removeAttribute(attr);
-            s.removeItem(storageKey);
+      // --- Make every toggle-switch area clickable ---
+      document.querySelectorAll('.toggle-switch').forEach(function(sw) {
+        sw.addEventListener('click', function(e) {
+          var cb = sw.querySelector('input[type="checkbox"]');
+          if (e.target !== cb) {
+            cb.checked = !cb.checked;
+            cb.dispatchEvent(new Event('change', { bubbles: true }));
           }
         });
-      }
+      });
+
+      // --- Also make labels toggle their checkboxes on click ---
+      document.querySelectorAll('.a11y-option > label[for]').forEach(function(lbl) {
+        lbl.addEventListener('click', function(e) {
+          e.preventDefault();
+          var cb = document.getElementById(lbl.getAttribute('for'));
+          if (cb) {
+            cb.checked = !cb.checked;
+            cb.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        });
+      });
+
+      // --- Setting handlers ---
+      function get(id) { return document.getElementById(id); }
 
       // Dark mode
-      var darkToggle = document.getElementById('a11y-dark');
-      darkToggle.checked = d.getAttribute('data-theme') === 'dark';
-      darkToggle.addEventListener('change', function() {
-        if (darkToggle.checked) {
+      var darkCb = get('a11y-dark');
+      darkCb.checked = d.getAttribute('data-theme') === 'dark';
+      darkCb.addEventListener('change', function() {
+        if (darkCb.checked) {
           d.setAttribute('data-theme', 'dark');
           s.setItem('dn-theme', 'dark');
         } else {
@@ -97,13 +105,23 @@
       });
 
       // Reduced motion
-      bindToggle('a11y-motion', 'dn-motion', 'data-motion', 'reduced');
+      var motionCb = get('a11y-motion');
+      motionCb.checked = d.hasAttribute('data-motion');
+      motionCb.addEventListener('change', function() {
+        if (motionCb.checked) {
+          d.setAttribute('data-motion', 'reduced');
+          s.setItem('dn-motion', 'on');
+        } else {
+          d.removeAttribute('data-motion');
+          s.removeItem('dn-motion');
+        }
+      });
 
       // Dyslexic font
-      var dyslexicToggle = document.getElementById('a11y-dyslexic');
-      dyslexicToggle.checked = d.getAttribute('data-font') === 'dyslexic';
-      dyslexicToggle.addEventListener('change', function() {
-        if (dyslexicToggle.checked) {
+      var dysCb = get('a11y-dyslexic');
+      dysCb.checked = d.getAttribute('data-font') === 'dyslexic';
+      dysCb.addEventListener('change', function() {
+        if (dysCb.checked) {
           d.setAttribute('data-font', 'dyslexic');
           s.setItem('dn-font', 'dyslexic');
         } else {
@@ -113,15 +131,34 @@
       });
 
       // Line spacing
-      bindToggle('a11y-spacing', 'dn-spacing', 'data-linespacing', 'wide');
+      var spaceCb = get('a11y-spacing');
+      spaceCb.checked = d.hasAttribute('data-linespacing');
+      spaceCb.addEventListener('change', function() {
+        if (spaceCb.checked) {
+          d.setAttribute('data-linespacing', 'wide');
+          s.setItem('dn-spacing', 'on');
+        } else {
+          d.removeAttribute('data-linespacing');
+          s.removeItem('dn-spacing');
+        }
+      });
 
       // Colorblind
-      bindToggle('a11y-colorblind', 'dn-colorblind', 'data-colorblind', 'on');
+      var cbCb = get('a11y-colorblind');
+      cbCb.checked = d.hasAttribute('data-colorblind');
+      cbCb.addEventListener('change', function() {
+        if (cbCb.checked) {
+          d.setAttribute('data-colorblind', 'on');
+          s.setItem('dn-colorblind', 'on');
+        } else {
+          d.removeAttribute('data-colorblind');
+          s.removeItem('dn-colorblind');
+        }
+      });
 
       // Text size
       var sizeBtns = document.querySelectorAll('.size-btn');
       var currentSize = d.getAttribute('data-textsize') || 'medium';
-
       function setSize(size) {
         sizeBtns.forEach(function(b) {
           b.classList.toggle('active', b.getAttribute('data-size') === size);
@@ -134,9 +171,7 @@
           s.setItem('dn-textsize', size);
         }
       }
-
       setSize(currentSize);
-
       sizeBtns.forEach(function(btn) {
         btn.addEventListener('click', function() {
           setSize(btn.getAttribute('data-size'));
