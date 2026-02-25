@@ -23,9 +23,8 @@
       if (s.getItem('dn-colorblind') === 'on') d.setAttribute('data-colorblind', 'on');
     })();
   </script>
-  <!-- Font preloading — eliminates flash of unstyled text -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Self-hosted fonts — no external requests -->
+  <link rel="stylesheet" href="{{ "css/fonts.css" | absURL }}">
   <link rel="icon" href="{{ "favicon.ico" | absURL }}" type="image/x-icon">
   <link rel="icon" href="{{ "favicon.png" | absURL }}" type="image/png">
   {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">{{ end }}

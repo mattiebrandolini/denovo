@@ -2,6 +2,7 @@ baseURL = 'https://mattiebrandolini.github.io/denovo/'
 languageCode = 'en-us'
 title = 'De Novo'
 enableRobotsTXT = true
+enableGitInfo = true
 theme = 'denovo'
 
 [params]
@@ -51,3 +52,6 @@ theme = 'denovo'
 
 [params.taxonomy]
   taxonomyCloud = ["tags"]
+
+[frontmatter]
+  lastmod = [":git", "lastmod", "date"]

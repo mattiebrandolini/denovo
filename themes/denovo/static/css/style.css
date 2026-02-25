@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+/* Fonts are self-hosted — see fonts.css */
 
 :root {
   --text: #1a1a1a;
@@ -37,28 +37,6 @@
 [data-linespacing="wide"] .post-list li { padding: 1.5rem 0; }
 
 /* === DYSLEXIC FONT === */
-@font-face {
-  font-family: 'OpenDyslexic';
-  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'OpenDyslexic';
-  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'OpenDyslexic';
-  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Italic.woff') format('woff');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
 [data-font="dyslexic"] {
   --body-font: 'OpenDyslexic', Georgia, serif;
   --heading-font: 'OpenDyslexic', Georgia, serif;
@@ -891,4 +869,21 @@ body.layout-tools .container {
 .tool-error button:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* --- Simple Summary (ELL support) --- */
+
+.simple-summary {
+  background: var(--bg-alt);
+  border-left: 3px solid var(--accent);
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-radius: 0 4px 4px 0;
+}
+
+.simple-summary strong {
+  color: var(--accent);
+  font-weight: 600;
 }
