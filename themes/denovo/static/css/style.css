@@ -887,3 +887,135 @@ body.layout-tools .container {
   color: var(--accent);
   font-weight: 600;
 }
+
+/* --- Series Navigation --- */
+
+.series-nav {
+  background: var(--bg-alt);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+}
+
+.series-nav-header {
+  font-family: var(--heading-font);
+  font-size: 0.85rem;
+  color: var(--text-light);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.series-nav-header a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.series-nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.series-prev, .series-next {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--text-light);
+  transition: color 0.2s ease;
+}
+
+.series-prev:hover, .series-next:hover {
+  color: var(--accent);
+}
+
+.series-next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.series-pill {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Series Grid (taxonomy list page) --- */
+
+.series-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.series-card {
+  display: block;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+
+.series-card:hover {
+  border-color: var(--accent);
+}
+
+.series-name {
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem 0;
+  color: var(--text);
+}
+
+.series-count {
+  font-family: var(--heading-font);
+  font-size: 0.8rem;
+  color: var(--text-light);
+  letter-spacing: 0.03em;
+}
+
+.series-list {
+  padding-left: 1.5rem;
+}
+
+.series-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.series-list li:last-child {
+  border-bottom: none;
+}
+
+.series-list a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.series-list a:hover {
+  color: var(--accent);
+}
+
+/* --- Related Content --- */
+
+.related-content {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.related-content h2 {
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin: 0 0 0.75rem 0;
+}
+
+.related-content .post-list li {
+  padding: 0.6rem 0;
+}
+
+.related-content .post-title {
+  font-size: 1.1rem;
+}
+
+.related-content .post-summary {
+  font-size: 0.8rem;
+}

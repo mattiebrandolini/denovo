@@ -4,7 +4,7 @@
     <h1>{{ .Title }}</h1>
     <div class="page-meta">
       {{ .Date.Format "January 2, 2006" }}
-      {{ with .Params.lastmod }}· Updated {{ .Format "January 2, 2006" }}{{ end }}
+      {{ with .Lastmod }}{{ if ne . $.Date }}· Updated {{ .Format "January 2, 2006" }}{{ end }}{{ end }}
       · {{ .ReadingTime }} min read
       {{ with .Params.description }} · <span class="page-description">{{ . }}</span>{{ end }}
     </div>
@@ -13,7 +13,14 @@
       {{ range . }}<a href="{{ "/tags/" | absURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
     </div>
     {{ end }}
+    {{ with .Params.series }}
+    <div class="tag-list">
+      {{ range . }}<a href="{{ "/series/" | absURL }}{{ . | urlize }}/" class="tag-pill series-pill">⟁ {{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
   </div>
+
+  {{ partial "series-nav.html" . }}
 
   {{ with .Params.summary_simple }}
   <aside class="simple-summary" aria-label="Simple summary">
@@ -34,6 +41,8 @@
     {{ .Content }}
   </div>
 
+  {{ partial "series-nav.html" . }}
+
   {{ with .Params.tags }}
   <footer class="post-footer">
     <div class="tag-list">
@@ -41,5 +50,7 @@
     </div>
   </footer>
   {{ end }}
+
+  {{ partial "related.html" . }}
 </article>
 {{ end }}

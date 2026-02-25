@@ -1,0 +1,31 @@
+{{- with .Params.series -}}
+{{- $seriesName := index . 0 -}}
+{{- $seriesPages := where $.Site.Pages ".Params.series" "intersect" (slice $seriesName) -}}
+{{- $seriesPages = sort $seriesPages ".Date" "asc" -}}
+{{- $total := len $seriesPages -}}
+{{- if gt $total 1 -}}
+{{- $currentIndex := 0 -}}
+{{- range $i, $p := $seriesPages -}}
+  {{- if eq $p.RelPermalink $.RelPermalink -}}
+    {{- $currentIndex = $i -}}
+  {{- end -}}
+{{- end -}}
+<nav class="series-nav" aria-label="Series navigation">
+  <div class="series-nav-header">
+    Part {{ add $currentIndex 1 }} of {{ $total }} in
+    <a href="{{ "/series/" | absURL }}{{ $seriesName | urlize }}/">{{ $seriesName }}</a>
+  </div>
+  <div class="series-nav-links">
+    {{- if gt $currentIndex 0 -}}
+    {{- $prev := index $seriesPages (sub $currentIndex 1) -}}
+    <a href="{{ $prev.RelPermalink }}" class="series-prev">← {{ $prev.Title }}</a>
+    {{- end -}}
+    {{- $nextIndex := add $currentIndex 1 -}}
+    {{- if lt $nextIndex $total -}}
+    {{- $next := index $seriesPages $nextIndex -}}
+    <a href="{{ $next.RelPermalink }}" class="series-next">{{ $next.Title }} →</a>
+    {{- end -}}
+  </div>
+</nav>
+{{- end -}}
+{{- end -}}

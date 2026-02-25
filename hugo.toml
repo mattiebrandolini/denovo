@@ -8,6 +8,7 @@ theme = 'denovo'
 [params]
   description = "Essays, fiction, and worldbuilding by Mattie Brandolini"
   author = "Mattie Brandolini"
+  github = "https://github.com/mattiebrandolini/denovo"
 
 [markup]
   [markup.goldmark]
@@ -47,11 +48,43 @@ theme = 'denovo'
   section = ["HTML", "RSS"]
   page = ["HTML"]
 
+# --- Taxonomies ---
 [taxonomies]
   tag = "tags"
+  series = "series"
 
 [params.taxonomy]
   taxonomyCloud = ["tags"]
 
+# --- Permalinks (locked per section — won't break if you reorganize files) ---
+[permalinks]
+  [permalinks.page]
+    essays = "/essays/:slug/"
+    fiction = "/fiction/:slug/"
+    worlds = "/worlds/:slug/"
+    rules = "/rules/:slug/"
+    tools = "/tools/:slug/"
+
+# --- Related content engine ---
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+    toLower = true
+
+  [[related.indices]]
+    name = "series"
+    weight = 200
+    toLower = true
+
+  [[related.indices]]
+    name = "date"
+    weight = 10
+
+# --- Frontmatter date handling ---
 [frontmatter]
   lastmod = [":git", "lastmod", "date"]

@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>Series</h1>
+  <p class="page-description">Multi-part writing, organized.</p>
+</div>
+
+<div class="series-grid">
+  {{ range .Data.Terms.Alphabetical }}
+  <a href="{{ .Page.RelPermalink }}" class="series-card">
+    <h2 class="series-name">{{ .Page.Title }}</h2>
+    <span class="series-count">{{ .Count }} {{ if eq .Count 1 }}part{{ else }}parts{{ end }}</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}

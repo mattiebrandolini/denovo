@@ -1,0 +1,19 @@
+{{- $related := .Site.RegularPages.Related . | first 4 -}}
+{{- with $related -}}
+<aside class="related-content" aria-label="Related content">
+  <h2>Related</h2>
+  <ul class="post-list">
+    {{- range . }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        <div class="post-title">{{ .Title }}</div>
+        <div class="post-meta-line">
+          <span class="post-section">{{ .Section | title }}</span>
+          {{ with .Params.description }}<span class="post-summary"> · {{ . }}</span>{{ end }}
+        </div>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</aside>
+{{- end -}}

@@ -4,6 +4,7 @@ date: {{ .Date }}
 description: ""
 summary_simple: ""
 tags: []
+series: []
 toc: true
 draft: true
 ---
