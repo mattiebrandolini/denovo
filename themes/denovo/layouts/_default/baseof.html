@@ -6,37 +6,24 @@
   <title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <script>
-    // Apply all settings immediately to prevent flash
     (function() {
       var d = document.documentElement;
       var s = localStorage;
-
-      // Dark mode
       var theme = s.getItem('dn-theme');
       if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         d.setAttribute('data-theme', 'dark');
       }
-
-      // Text size
       var size = s.getItem('dn-textsize');
       if (size) d.setAttribute('data-textsize', size);
-
-      // Line spacing
       if (s.getItem('dn-spacing') === 'on') d.setAttribute('data-linespacing', 'wide');
-
-      // Dyslexic font
       if (s.getItem('dn-font') === 'dyslexic') d.setAttribute('data-font', 'dyslexic');
-
-      // Reduced motion
       if (s.getItem('dn-motion') === 'on' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         d.setAttribute('data-motion', 'reduced');
       }
-
-      // Colorblind
       if (s.getItem('dn-colorblind') === 'on') d.setAttribute('data-colorblind', 'on');
     })();
   </script>
-  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 </head>
 <body>
   <div class="container">
@@ -52,32 +39,38 @@
       var s = localStorage;
       var panel = document.querySelector('.a11y-panel');
       var trigger = document.querySelector('.a11y-trigger');
+      var isOpen = false;
 
-      // --- Panel open/close ---
+      function openPanel() {
+        isOpen = true;
+        panel.style.display = 'block';
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function closePanel() {
+        isOpen = false;
+        panel.style.display = 'none';
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+
       trigger.addEventListener('click', function(e) {
         e.stopPropagation();
-        var open = panel.classList.toggle('open');
-        trigger.setAttribute('aria-expanded', open);
+        if (isOpen) { closePanel(); } else { openPanel(); }
       });
 
       document.addEventListener('click', function(e) {
-        if (!panel.contains(e.target) && e.target !== trigger) {
-          panel.classList.remove('open');
-          trigger.setAttribute('aria-expanded', 'false');
+        if (isOpen && !panel.contains(e.target) && e.target !== trigger) {
+          closePanel();
         }
       });
 
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          panel.classList.remove('open');
-          trigger.setAttribute('aria-expanded', 'false');
-        }
+        if (e.key === 'Escape' && isOpen) closePanel();
       });
 
       // --- Helper: toggle a data attribute ---
       function bindToggle(id, storageKey, attr, onVal) {
         var el = document.getElementById(id);
-        // Set initial state from DOM
         el.checked = d.hasAttribute(attr);
         el.addEventListener('change', function() {
           if (el.checked) {
@@ -90,7 +83,7 @@
         });
       }
 
-      // --- Dark mode ---
+      // Dark mode
       var darkToggle = document.getElementById('a11y-dark');
       darkToggle.checked = d.getAttribute('data-theme') === 'dark';
       darkToggle.addEventListener('change', function() {
@@ -103,10 +96,10 @@
         }
       });
 
-      // --- Reduced motion ---
+      // Reduced motion
       bindToggle('a11y-motion', 'dn-motion', 'data-motion', 'reduced');
 
-      // --- Dyslexic font ---
+      // Dyslexic font
       var dyslexicToggle = document.getElementById('a11y-dyslexic');
       dyslexicToggle.checked = d.getAttribute('data-font') === 'dyslexic';
       dyslexicToggle.addEventListener('change', function() {
@@ -119,13 +112,13 @@
         }
       });
 
-      // --- Line spacing ---
+      // Line spacing
       bindToggle('a11y-spacing', 'dn-spacing', 'data-linespacing', 'wide');
 
-      // --- Colorblind ---
+      // Colorblind
       bindToggle('a11y-colorblind', 'dn-colorblind', 'data-colorblind', 'on');
 
-      // --- Text size ---
+      // Text size
       var sizeBtns = document.querySelectorAll('.size-btn');
       var currentSize = d.getAttribute('data-textsize') || 'medium';
 

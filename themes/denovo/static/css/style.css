@@ -210,7 +210,6 @@ nav.site-nav a.active {
 }
 
 .a11y-panel {
-  display: none;
   position: absolute;
   top: calc(100% + 0.5rem);
   right: 0;
@@ -225,10 +224,6 @@ nav.site-nav a.active {
 
 [data-theme="dark"] .a11y-panel {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.a11y-panel.open {
-  display: block;
 }
 
 .a11y-panel h3 {

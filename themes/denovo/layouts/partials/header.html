@@ -1,23 +1,21 @@
 <header class="site-header">
   <div class="site-header-left">
     <div class="site-title">
-      <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
     </div>
     <nav class="site-nav">
       {{- range .Site.Menus.main }}
-      <a href="{{ .URL | relURL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}>{{ .Name }}</a>
+      <a href="{{ .URL | absURL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}>{{ .Name }}</a>
       {{- end }}
     </nav>
   </div>
   <div class="a11y-controls">
     <button class="a11y-trigger" aria-label="Accessibility settings" aria-expanded="false" title="Accessibility settings">⚙</button>
-    <div class="a11y-panel" role="dialog" aria-label="Accessibility settings">
+    <div class="a11y-panel" style="display:none" role="dialog" aria-label="Accessibility settings">
       <h3>Display</h3>
 
       <div class="a11y-option">
-        <label for="a11y-dark">
-          Dark mode
-        </label>
+        <label for="a11y-dark">Dark mode</label>
         <span class="toggle-switch">
           <input type="checkbox" id="a11y-dark">
           <span class="toggle-slider"></span>
@@ -25,9 +23,7 @@
       </div>
 
       <div class="a11y-option">
-        <label for="a11y-motion">
-          Reduced motion
-        </label>
+        <label for="a11y-motion">Reduced motion</label>
         <span class="toggle-switch">
           <input type="checkbox" id="a11y-motion">
           <span class="toggle-slider"></span>
@@ -49,9 +45,7 @@
       </div>
 
       <div class="a11y-option">
-        <label>
-          Text size
-        </label>
+        <label>Text size</label>
         <div class="size-selector">
           <button class="size-btn" data-size="small">A</button>
           <button class="size-btn" data-size="medium">A</button>
