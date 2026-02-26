@@ -24,9 +24,16 @@
       height="{{ $medium.Height }}"
       loading="lazy"
       decoding="async"
+      onerror="this.onerror=null;this.srcset='';this.src='{{ "img/placeholder.svg" | absURL }}';this.classList.add('img-broken')"
     >
   {{- else -}}
-    <img src="{{ $src | relURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+    <img
+      src="{{ $src | relURL }}"
+      alt="{{ $alt }}"
+      loading="lazy"
+      decoding="async"
+      onerror="this.onerror=null;this.src='{{ "img/placeholder.svg" | absURL }}';this.classList.add('img-broken')"
+    >
   {{- end -}}
   {{- if or $caption $credit }}
   <figcaption>

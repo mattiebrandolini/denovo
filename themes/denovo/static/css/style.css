@@ -1226,3 +1226,15 @@ body.layout-tools .container {
 .tool-noscript strong {
   color: var(--text);
 }
+
+
+/* --- Broken image fallback --- */
+
+.img-broken {
+  background: var(--bg-alt);
+  border: 1px dashed var(--border);
+  border-radius: 3px;
+  padding: 2rem;
+  max-height: 300px;
+  object-fit: contain;
+}
