@@ -9,6 +9,13 @@
       · {{ .ReadingTime }} min read
       {{ with .Params.description }} · <span class="page-description">{{ . }}</span>{{ end }}
     </div>
+    {{ if or .Params.knowledge .Params.world .Params.setting_era }}
+    <div class="lore-meta">
+      {{ with .Params.knowledge }}<span class="knowledge-badge knowledge-{{ . }}" title="Knowledge scope: {{ . }}">{{ . }}</span>{{ end }}
+      {{ with $.Params.world }}<span class="world-badge">{{ . }}</span>{{ end }}
+      {{ with $.Params.setting_era }}<span class="era-badge">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
     {{ with .Params.tags }}
     <div class="tag-list">
       {{ range . }}<a href="{{ "/tags/" | absURL }}{{ . | urlize }}/" class="tag-pill" data-pagefind-filter="tag">{{ . }}</a>{{ end }}

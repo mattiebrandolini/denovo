@@ -1375,3 +1375,67 @@ body.layout-tools .container {
 .pagefind-ui .pagefind-ui__drawer .pagefind-ui__footer {
   display: none;
 }
+
+
+/* ============================= */
+/* LORE METADATA BADGES          */
+/* ============================= */
+
+.lore-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.knowledge-badge,
+.world-badge,
+.era-badge {
+  display: inline-block;
+  font-family: var(--heading-font);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+
+.knowledge-common {
+  border-color: #5a8a5a;
+  color: #5a8a5a;
+}
+
+.knowledge-uncommon {
+  border-color: #8a7a3a;
+  color: #8a7a3a;
+}
+
+.knowledge-player {
+  border-color: #6a5a8a;
+  color: #6a5a8a;
+}
+
+.world-badge {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.era-badge {
+  color: var(--text-light);
+}
+
+[data-theme="dark"] .knowledge-common {
+  border-color: #7aaa7a;
+  color: #7aaa7a;
+}
+
+[data-theme="dark"] .knowledge-uncommon {
+  border-color: #baa85a;
+  color: #baa85a;
+}
+
+[data-theme="dark"] .knowledge-player {
+  border-color: #9a8aba;
+  color: #9a8aba;
+}
