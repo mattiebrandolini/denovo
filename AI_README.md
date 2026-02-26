@@ -26,6 +26,9 @@ hugo.toml                    # Site config: menus, taxonomies, permalinks, relat
 content/
   essays/                    # Long-form writing (archetype: archetypes/essays.md)
   worlds/                    # De Novo worldbuilding (archetype: archetypes/worlds.md)
+    shared/                  # Cosmology spanning all settings (Terrans, Dark Tapestry, Van)
+    wiege/                   # Wiege-specific (nations, people, deities, organizations)
+    shallow-sea/             # Shallow Sea-specific
   fiction/                   # Short stories (archetype: archetypes/fiction.md)
   rules/                     # PF2e homebrew (archetype: archetypes/rules.md)
   tools/                     # Interactive apps (archetype: archetypes/tools.md)
@@ -97,8 +100,20 @@ hugo new essays/my-title.md
 1. Create `content/newsection/_index.md`
 2. Add archetype in `archetypes/newsection.md`
 3. Add menu entry in `hugo.toml` under `[menu]`
-4. Add to homepage sections list in `themes/denovo/layouts/index.html`
-5. Add permalink pattern in `hugo.toml` under `[permalinks.page]`
+4. Add to homepage sections list in `themes/denovo/layouts/index.html` (if chronological content)
+5. Add permalink pattern in `hugo.toml` under `[permalinks.page]` (not needed for worlds — uses directory structure)
+
+### Add a new worldbuilding article
+1. Create file in `content/worlds/{subsection}/article-name.md` (shared, wiege, or shallow-sea)
+2. Set `article_type` in frontmatter (overview, nation, person, deity, organization, location, concept, history)
+3. Set `knowledge` scope (common, uncommon, player)
+4. Cross-link to related articles on first mention
+5. URL will be `/worlds/{subsection}/article-name/` automatically
+
+### Add a new worldbuilding subsection
+1. Create `content/worlds/newworld/_index.md` with title and description
+2. Articles placed in that directory automatically appear in the subsection
+3. The subsection card appears on `/worlds/` automatically
 
 ### Add a new shortcode
 1. Create `themes/denovo/layouts/shortcodes/name.html`

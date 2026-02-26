@@ -10,7 +10,7 @@ article_type: "person"
 draft: false
 ---
 
-Fiona is the town healer and priestess of Ronahiya in the settlement surrounding the ruins of [Noureddine](/worlds/noureddine/). She is one of two living witnesses to the [War of Dominion](/worlds/war-of-dominion/) — the other being [Leo](/worlds/leo/), the Kex veteran.
+Fiona is the town healer and priestess of Ronahiya in the settlement surrounding the ruins of [Noureddine](/worlds/wiege/noureddine/). She is one of two living witnesses to the [War of Dominion](/worlds/wiege/war-of-dominion/) — the other being [Leo](/worlds/wiege/leo/), the Kex veteran.
 
 Where Leo carries guilt, Fiona carries righteous indignation and pride in a tradition that was destroyed. She can identify Ronahiya-aligned artifacts and scrolls, and she holds the perspective of the defenders — the people whose holy city was desecrated, whose goddess's greatest temple was cursed.
 

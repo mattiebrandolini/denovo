@@ -65,7 +65,6 @@ theme = 'denovo'
   [permalinks.page]
     essays = "/essays/:slug/"
     fiction = "/fiction/:slug/"
-    worlds = "/worlds/:slug/"
     rules = "/rules/:slug/"
     tools = "/tools/:slug/"
 

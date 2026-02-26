@@ -1,18 +1,11 @@
 ---
 title: "The Shallow Sea"
-date: 2026-02-26
 description: "A mega-archipelago continent formed by cosmic catastrophe — the shattered remains of a world that existed before."
-tags: ["shallow-sea", "overview", "black-star"]
-world: "Shallow Sea"
-knowledge: "common"
-toc: true
-article_type: "overview"
-draft: false
 ---
 
-The Shallow Sea is a mega-archipelago continent formed by the impact of a destroyed [Great Old One](/worlds/the-dark-tapestry/) called Black Star. The vast majority of its waters lie within the shallow Epipelagic (sunlight) and Mesopelagic (twilight) zones, surrounded by the deep Abyssopelagic zone. The technological and cultural level ranges from colonial to Enlightenment-era Earth.
+The Shallow Sea is a mega-archipelago continent formed by the impact of a destroyed [Great Old One](/worlds/shared/the-dark-tapestry/) called Black Star. The vast majority of its waters lie within the shallow Epipelagic (sunlight) and Mesopelagic (twilight) zones, surrounded by the deep Abyssopelagic zone. The technological and cultural level ranges from colonial to Enlightenment-era Earth.
 
-The setting is the darker aftermath of a previous civilization's destruction. Before the apocalypse, a civilization existed here in contact with the [Terran](/worlds/the-terrans/) [Vanguard](/worlds/the-vanguard/), possessing knowledge and capabilities that are now lost. Black Star's death — and the psychic backlash of its failed resurrection — shattered that world and remade what remained into something bleaker.
+The setting is the darker aftermath of a previous civilization's destruction. Before the apocalypse, a civilization existed here in contact with the [Terran](/worlds/shared/the-terrans/) [Vanguard](/worlds/shared/the-vanguard/), possessing knowledge and capabilities that are now lost. Black Star's death — and the psychic backlash of its failed resurrection — shattered that world and remade what remained into something bleaker.
 
 ## Geography
 

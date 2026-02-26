@@ -1,11 +1,17 @@
 {{- if not .IsHome -}}
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="{{ .Site.BaseURL }}">Home</a>
-  {{- if .Parent }}
-    {{- if ne .Parent.IsHome true }}
-    <span class="bc-sep">›</span>
-    <a href="{{ .Parent.Permalink }}">{{ .Parent.Title }}</a>
+  {{- $ancestors := slice }}
+  {{- $current := .Parent }}
+  {{- range seq 10 }}
+    {{- if and $current (not $current.IsHome) }}
+      {{- $ancestors = $ancestors | append $current }}
+      {{- $current = $current.Parent }}
     {{- end }}
+  {{- end }}
+  {{- range $ancestors | collections.Reverse }}
+  <span class="bc-sep">›</span>
+  <a href="{{ .Permalink }}">{{ .Title }}</a>
   {{- end }}
   {{- if .IsPage }}
   <span class="bc-sep">›</span>

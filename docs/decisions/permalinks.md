@@ -25,3 +25,18 @@ Slug is derived from the filename by default, but can be overridden in frontmatt
 - If a page must move, create an HTML redirect at the old URL
 
 ## DO NOT change permalink patterns for sections that have published content.
+
+
+## Update: 2026-02-26
+
+Worlds section was restructured from flat to nested:
+- `/worlds/shared/` — cosmology spanning all settings
+- `/worlds/wiege/` — Wiege-specific content
+- `/worlds/shallow-sea/` — Shallow Sea-specific content
+
+The explicit permalink override for worlds was removed. Hugo's default
+nested section behavior generates the correct hierarchical URLs from
+the directory structure.
+
+Article URLs are now: `/worlds/{subsection}/{slug}/`
+Section URLs are: `/worlds/{subsection}/`

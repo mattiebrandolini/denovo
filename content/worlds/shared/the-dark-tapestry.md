@@ -17,16 +17,16 @@ The Dark Tapestry is not an army in any conventional sense. It is more like an e
 
 The Great Old Ones are the primary entities of the Dark Tapestry. They are vast, alien, and hostile to the existence of ordered civilization. They claim worlds, establish brood planets, and work through corruption, infection, and madness.
 
-Known Great Old Ones connected to De Novo's settings include Shubnigoroth, who claimed [Wiege](/worlds/wiege/) as a brood planet, and Black Star, whose death and failed resurrection created the [Shallow Sea](/worlds/the-shallow-sea/).
+Known Great Old Ones connected to De Novo's settings include Shubnigoroth, who claimed [Wiege](/worlds/wiege/) as a brood planet, and Black Star, whose death and failed resurrection created the [Shallow Sea](/worlds/shallow-sea/).
 
 The Great Old Ones also have hierarchies of their own — Great Young Ones, Heralds who serve as their agents, and cults that form around their influence on mortal worlds.
 
 ## The Terran War
 
-The [Terrans](/worlds/the-terrans/) have been fighting the Dark Tapestry for millennia through the [Vanguard](/worlds/the-vanguard/) — their dedicated military campaign. This war is existential and ongoing, with no clear end in sight. The Terran philosophical divide — between those who believe in defensive integrity and those who demand offensive annihilation — is itself a product of this war's impossible timescale.
+The [Terrans](/worlds/shared/the-terrans/) have been fighting the Dark Tapestry for millennia through the [Vanguard](/worlds/shared/the-vanguard/) — their dedicated military campaign. This war is existential and ongoing, with no clear end in sight. The Terran philosophical divide — between those who believe in defensive integrity and those who demand offensive annihilation — is itself a product of this war's impossible timescale.
 
 ## Influence on Mortal Worlds
 
 The Dark Tapestry's influence manifests differently on each world it touches. On Wiege, it has produced brood planet contamination, Great Old One cults, and the exile of dangerous Terran operatives. In the Shallow Sea, a Great Old One's death itself reshaped the world.
 
-The common thread is corruption: the Dark Tapestry doesn't need to conquer worlds directly. It needs only to introduce enough instability for civilizations to tear themselves apart — the same strategy that nearly destroyed the [Terrans](/worlds/the-terrans/) themselves.
+The common thread is corruption: the Dark Tapestry doesn't need to conquer worlds directly. It needs only to introduce enough instability for civilizations to tear themselves apart — the same strategy that nearly destroyed the [Terrans](/worlds/shared/the-terrans/) themselves.

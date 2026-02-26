@@ -15,6 +15,6 @@ It is known as the Nation of Spies.
 
 Teorainn's sovereignty has been maintained through espionage, covert operations, and the cultivation of information networks that extend far beyond its borders. Where larger nations project power through armies and economies, Teorainn projects power through knowing things — and through making sure its neighbors know that it knows.
 
-The nation is a steadfast ally of [Nochnick](/worlds/nochnick/), the orcish nation in the Overdark Forest, and this alliance provides Teorainn with a reliable partner against the threats that press from both sides.
+The nation is a steadfast ally of [Nochnick](/worlds/wiege/nochnick/), the orcish nation in the Overdark Forest, and this alliance provides Teorainn with a reliable partner against the threats that press from both sides.
 
 Hexalt recently invaded Teorainn, demonstrating that the nation's intelligence advantages have limits when facing a determined aggressor with sufficient military force.

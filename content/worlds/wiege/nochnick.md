@@ -15,8 +15,8 @@ Nochnick spends most of its time and energy on a singular, unending task: fighti
 
 ## Religion
 
-Nochnick worships two deities: Sajjan, god of the moon, and [Ronahiya](/worlds/noureddine/), goddess of the sun. This dual worship reflects a cosmological completeness — the full cycle of day and night, light and dark — that the Nochnick consider fundamental to proper existence.
+Nochnick worships two deities: Sajjan, god of the moon, and [Ronahiya](/worlds/wiege/noureddine/), goddess of the sun. This dual worship reflects a cosmological completeness — the full cycle of day and night, light and dark — that the Nochnick consider fundamental to proper existence.
 
 ## Alliances
 
-Nochnick is a steadfast ally of [Teorainn](/worlds/teorainn/), the halfling Nation of Spies. This alliance is one of the more durable partnerships on [Wiege](/worlds/wiege/) — two nations that survive through competence rather than conquest, each bringing something the other lacks.
+Nochnick is a steadfast ally of [Teorainn](/worlds/wiege/teorainn/), the halfling Nation of Spies. This alliance is one of the more durable partnerships on [Wiege](/worlds/wiege/) — two nations that survive through competence rather than conquest, each bringing something the other lacks.
