@@ -5,7 +5,7 @@ description: "A world of nations and gods caught between local conflicts and cos
 
 Wiege is a world of nations, gods, and mortal politics. It has its own deep history spanning multiple eras, from medieval holy wars to a modern period of corporations, intelligence agencies, and global upheaval. The technological level varies by era and region — the modern era (designated 20xx in the Long Shot timeline) resembles a contemporary Earth with magic, while earlier eras (such as the 4th Era around 1120) are closer to a late medieval world.
 
-Wiege is also, unknown to most of its inhabitants, a world shaped by forces beyond its own history. A [Great Old One](/worlds/shared/the-dark-tapestry/) once claimed it as a brood planet. [Terran](/worlds/shared/the-terrans/) exiles walk its surface. The consequences are still unfolding.
+Wiege is also, unknown to most of its inhabitants, a world shaped by forces beyond its own history. A [Great Old One]({{< ref "/worlds/shared/the-dark-tapestry" >}}) once claimed it as a brood planet. [Terran]({{< ref "/worlds/shared/the-terrans" >}}) exiles walk its surface. The consequences are still unfolding.
 
 ## Geography and Nations
 
@@ -17,9 +17,9 @@ A republic of former colonies that practically worships neoliberalism. The Combi
 
 ### Kex
 
-A nation built on the theological premise that hierarchy is the fundamental truth of the universe. Kex venerates [Malabolous](/worlds/wiege/malabolous/), the god of order and hierarchy, and its political system functions as a theocratic hierarchy despite nominally being democratic. The ideology extends to species: Kex theology holds that beings of shorter stature are inherently suited to servitude, a doctrine that supports legal chattel slavery.
+A nation built on the theological premise that hierarchy is the fundamental truth of the universe. Kex venerates [Malabolous]({{< ref "/worlds/wiege/malabolous" >}}), the god of order and hierarchy, and its political system functions as a theocratic hierarchy despite nominally being democratic. The ideology extends to species: Kex theology holds that beings of shorter stature are inherently suited to servitude, a doctrine that supports legal chattel slavery.
 
-Kex is heavily involved in technology, manufacturing, and finance, and is expansionist in ambition — constantly eyeing neighboring [Teorainn](/worlds/wiege/teorainn/) for conquest. Kex and Hexalt share a deep mutual hatred.
+Kex is heavily involved in technology, manufacturing, and finance, and is expansionist in ambition — constantly eyeing neighboring [Teorainn]({{< ref "/worlds/wiege/teorainn" >}}) for conquest. Kex and Hexalt share a deep mutual hatred.
 
 ### Hexalt
 
@@ -37,7 +37,7 @@ A Trela-dominated empire already on the decline, heavily involved in finance, to
 
 A Kholo (Gnoll) nation subservient to Telikí, caught in a proxy civil war entangled with its patron's internal conflicts. Demon-influenced like Telikí.
 
-### [Nochnick](/worlds/wiege/nochnick/)
+### [Nochnick]({{< ref "/worlds/wiege/nochnick" >}})
 
 An orcish nation in the Overdark Forest, governed by a highly horizontal and egalitarian council-of-councils system. Nochnick spends most of its energy fighting creatures from the Mouth — large openings to the Abyssal Vaults beneath the forest. The Nochnick worship Sajjan (god of the moon) and Ronahiya (goddess of the sun), and are steadfast allies of Teorainn.
 
@@ -81,6 +81,6 @@ A diverse nation shaped by werebeast populations.
 
 Wiege's history spans multiple eras. Two have seen active play:
 
-**The 4th Era (~1120)** — a late medieval period. The [War of Dominion](/worlds/wiege/war-of-dominion/) between Kex and the forces of Ronahiya desecrated the holy city of [Noureddine](/worlds/wiege/noureddine/) and left a cursed megadungeon in its wake. This era is the setting of the SWAT Team campaign.
+**The 4th Era (~1120)** — a late medieval period. The [War of Dominion]({{< ref "/worlds/wiege/war-of-dominion" >}}) between Kex and the forces of Ronahiya desecrated the holy city of [Noureddine]({{< ref "/worlds/wiege/noureddine" >}}) and left a cursed megadungeon in its wake. This era is the setting of the SWAT Team campaign.
 
 **The Modern Era (20xx)** — a contemporary world with magic. Corporations, intelligence agencies, and global institutions coexist with gods, monsters, and shadow rulers. The recent intelligence release by the Terran exile Van has triggered global upheaval, exposing the monsters who ruled from the shadows. This era is the setting of the Long Shot campaign.

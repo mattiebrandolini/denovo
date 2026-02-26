@@ -11,13 +11,13 @@ article_type: "location"
 draft: false
 ---
 
-Noureddine was the holy city of Ronahiya, goddess of the sun — the seat of [the Coronal](/worlds/wiege/the-coronal-jebrot/), the most powerful centralized church dedicated to her worship. Even at its height, the city was nearly overshadowed by the Great Zenith Manara of Ronahiya, a massive stepped platform structure designed to ensure no one would be denied sunlight by the shadow of mortal works. The Manara once housed a flame-powered mirror beacon that cast daylight into the night sky.
+Noureddine was the holy city of Ronahiya, goddess of the sun — the seat of [the Coronal]({{< ref "/worlds/wiege/the-coronal-jebrot" >}}), the most powerful centralized church dedicated to her worship. Even at its height, the city was nearly overshadowed by the Great Zenith Manara of Ronahiya, a massive stepped platform structure designed to ensure no one would be denied sunlight by the shadow of mortal works. The Manara once housed a flame-powered mirror beacon that cast daylight into the night sky.
 
 The city now lies in ruins, its shadow falling far despite no physical structure casting it.
 
 ## The Fall
 
-Fifty years before the present day (circa 1070 4E), the Kingdom of [Kex](/worlds/wiege/kex/) prosecuted the War of Dominion — a military campaign that culminated in the sacking and ritual desecration of Noureddine. During the siege, Kex forces performed the [Ritual of Sundered Day](/worlds/wiege/war-of-dominion/), which killed a substantial number of combatants on both sides and resurrected them as undead.
+Fifty years before the present day (circa 1070 4E), the Kingdom of [Kex]({{< ref "/worlds/wiege/kex" >}}) prosecuted the War of Dominion — a military campaign that culminated in the sacking and ritual desecration of Noureddine. During the siege, Kex forces performed the [Ritual of Sundered Day]({{< ref "/worlds/wiege/war-of-dominion" >}}), which killed a substantial number of combatants on both sides and resurrected them as undead.
 
 The ritual permanently cursed the city. The ruins now function as a megadungeon swarming with undead from two ideologically opposed factions: the resurrected Kex soldiers and the resurrected defenders of Noureddine, who continue fighting each other decades after the war that killed them. Both groups have fuzzy memories of their past lives and conflicting agendas.
 

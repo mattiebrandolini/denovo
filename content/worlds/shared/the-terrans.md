@@ -18,7 +18,7 @@ Most worlds in De Novo have been touched by the Terrans in some way, though the 
 
 Terran civilization has two branches.
 
-The **Coro** are organic Terrans — biological beings, though often enhanced far beyond baseline through [Vanguard](/worlds/shared/the-vanguard/) programs and genetic engineering. The Coro are the ancestors, the original species, the ones who nearly destroyed themselves.
+The **Coro** are organic Terrans — biological beings, though often enhanced far beyond baseline through [Vanguard]({{< ref "/worlds/shared/the-vanguard" >}}) programs and genetic engineering. The Coro are the ancestors, the original species, the ones who nearly destroyed themselves.
 
 The **Homo Machina** are the machine descendants of the Coro. They emerged from Terran technology and have since assumed primary governance of Terran society. The Machina are not servants or tools — they are a civilization in their own right, one that chose to care for its organic ancestors and guide them forward after the near-extinction.
 
@@ -48,7 +48,7 @@ The deepest fracture in Terran civilization is not between Coro and Machina, but
 
 The **Machina position** holds that the enemy's true weapon is corruption, not force. You don't beat something that exploits fractures by hitting harder — you beat it by becoming unfracturable. Unity, morality, stability, flexibility — these are strategic infrastructure, not soft values. The war may never end, but the civilization endures if its integrity holds.
 
-The **dissenting position** — most extremely represented by the exile Van — holds that the Terrans are fighting not to lose rather than fighting to win. That caution and careful management amount to slow suicide against an existential threat. That the [Dark Tapestry](/worlds/shared/the-dark-tapestry/) is still out there, the Great Old Ones haven't gone anywhere, and containment is not victory.
+The **dissenting position** — most extremely represented by the exile Van — holds that the Terrans are fighting not to lose rather than fighting to win. That caution and careful management amount to slow suicide against an existential threat. That the [Dark Tapestry]({{< ref "/worlds/shared/the-dark-tapestry" >}}) is still out there, the Great Old Ones haven't gone anywhere, and containment is not victory.
 
 Both positions are defensible. Both have evidence. Neither can prove the other wrong without the experiment costing everything.
 

@@ -10,11 +10,11 @@ article_type: "person"
 draft: false
 ---
 
-Van is a Terran Coro — the most extreme product of the [Vanguard](/worlds/shared/the-vanguard/)'s artificial evolution programs. He was created from the template of Arch Hunter Anacrite, the most accomplished operative the Vanguard had ever produced, with parameters pushed far beyond safe tolerances. He represents both the pinnacle and the catastrophe of Terran enhancement.
+Van is a Terran Coro — the most extreme product of the [Vanguard]({{< ref "/worlds/shared/the-vanguard" >}})'s artificial evolution programs. He was created from the template of Arch Hunter Anacrite, the most accomplished operative the Vanguard had ever produced, with parameters pushed far beyond safe tolerances. He represents both the pinnacle and the catastrophe of Terran enhancement.
 
 ## Origin
 
-Van was created by the [Homo Machina](/worlds/shared/the-terrans/) from Anacrite's template. Anacrite was already at the extreme edge of safe parameters for Terran neurobiology. The Machina, in desperation to advance the campaign against the [Dark Tapestry](/worlds/shared/the-dark-tapestry/), created a batch of Coro based on her template with many parameters pushed further. Van was the most extreme result.
+Van was created by the [Homo Machina]({{< ref "/worlds/shared/the-terrans" >}}) from Anacrite's template. Anacrite was already at the extreme edge of safe parameters for Terran neurobiology. The Machina, in desperation to advance the campaign against the [Dark Tapestry]({{< ref "/worlds/shared/the-dark-tapestry" >}}), created a batch of Coro based on her template with many parameters pushed further. Van was the most extreme result.
 
 His creation involved a chain of compounding errors: exceeded biological tolerances, insufficient stabilization, and a violation of Vanguard protocols — he was informed of his template's identity, which shaped his self-perception in ways the system was designed to prevent.
 
@@ -28,9 +28,9 @@ The Machina recognized him as precisely the kind of internal destabilizing force
 
 ## The Banishment
 
-Van was banished from Terran space to [Wiege](/worlds/wiege/) because he was too dangerous to Terran society. His execution has been ordered — at least one Nephilim has been sent to carry out the sentence. Even this costs the Terrans something internally, because a civilization that kills its own easily is a civilization with cracks.
+Van was banished from Terran space to [Wiege]({{< ref "/worlds/wiege" >}}) because he was too dangerous to Terran society. His execution has been ordered — at least one Nephilim has been sent to carry out the sentence. Even this costs the Terrans something internally, because a civilization that kills its own easily is a civilization with cracks.
 
-On Wiege, Van proved such a threat to Shubnigoroth — the Great Old One whose experimental brood planet Wiege was — that she empowered her herald to banish him further, into the [Realm of Nightmares](/worlds/wiege/realm-of-nightmares/). He spent millennia imprisoned there, fighting nightmare creatures and gathering followers through dreams, before eventually being freed.
+On Wiege, Van proved such a threat to Shubnigoroth — the Great Old One whose experimental brood planet Wiege was — that she empowered her herald to banish him further, into the [Realm of Nightmares]({{< ref "/worlds/wiege/realm-of-nightmares" >}}). He spent millennia imprisoned there, fighting nightmare creatures and gathering followers through dreams, before eventually being freed.
 
 ## Power Scale
 
@@ -44,4 +44,4 @@ The release was motivated by a combination of pragmatism and pettiness — playe
 
 ## Current Status
 
-Van is free, powerful, and operating on Wiege with unclear long-term intentions. His allies include Aliel, the presumed-dead CEO of [Arc Industries](/worlds/wiege/cult-of-material-metaphysics/), and General Umbra, a militant Shattered operative. The Nephilim sent to execute him was injured during reentry to Wiege and must now kill the man that much of the world thinks saved them.
+Van is free, powerful, and operating on Wiege with unclear long-term intentions. His allies include Aliel, the presumed-dead CEO of [Arc Industries]({{< ref "/worlds/wiege/cult-of-material-metaphysics" >}}), and General Umbra, a militant Shattered operative. The Nephilim sent to execute him was injured during reentry to Wiege and must now kill the man that much of the world thinks saved them.

@@ -22,7 +22,7 @@ The Nine Hells are not a punishment in this theology — they are a demonstratio
 
 ## Divine Justification of Slavery
 
-Within [Kex](/worlds/wiege/kex/), Malabolous's theology provides explicit cover for chattel slavery of short-statured peoples. The logic: if Malabolous made certain beings shorter, closer to the ground, suited to labor — then enslaving them is not oppression but recognition of divine intent. The hierarchy is not imposed by mortals; it is read from creation.
+Within [Kex]({{< ref "/worlds/wiege/kex" >}}), Malabolous's theology provides explicit cover for chattel slavery of short-statured peoples. The logic: if Malabolous made certain beings shorter, closer to the ground, suited to labor — then enslaving them is not oppression but recognition of divine intent. The hierarchy is not imposed by mortals; it is read from creation.
 
 The criterion of hierarchy is height. Taller beings are closer to the divine. Shorter beings are closer to the earth — to labor, to servitude. This is presented not as cruelty but as natural order, as benevolent recognition of each being's proper place.
 
@@ -32,4 +32,4 @@ The parallel to real-world racial hierarchy is deliberate and structural: the un
 
 Malabolous represents hierarchy as first principle — the belief that order, rank, and placement are more fundamental than personhood, dignity, or agency. His is a coherent worldview that follows its internal logic faithfully and still produces slavery, genocide, and the desecration of holy cities.
 
-The ideology's test is not whether it can be argued against — it can. The test is whether it holds up under optimal conditions, with believers who are not corrupt, not sadistic, but genuinely faithful. The ruins of [Noureddine](/worlds/wiege/noureddine/) are the answer.
+The ideology's test is not whether it can be argued against — it can. The test is whether it holds up under optimal conditions, with believers who are not corrupt, not sadistic, but genuinely faithful. The ruins of [Noureddine]({{< ref "/worlds/wiege/noureddine" >}}) are the answer.

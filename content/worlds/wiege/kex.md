@@ -10,9 +10,9 @@ article_type: "nation"
 draft: false
 ---
 
-Kex is a nation built on the theological premise that hierarchy is the foundational truth of the universe. Its citizens believe that all beings have a natural place relative to one another, determined by worth and power, and that this order reflects divine will. The nation venerates [Malabolous](/worlds/wiege/malabolous/), god of order and hierarchy, and is culturally aligned with devil worship — specifically the Nine Hells model of absolute hierarchical order.
+Kex is a nation built on the theological premise that hierarchy is the foundational truth of the universe. Its citizens believe that all beings have a natural place relative to one another, determined by worth and power, and that this order reflects divine will. The nation venerates [Malabolous]({{< ref "/worlds/wiege/malabolous" >}}), god of order and hierarchy, and is culturally aligned with devil worship — specifically the Nine Hells model of absolute hierarchical order.
 
-Kex is expansionist in ambition, constantly eyeing neighboring [Teorainn](/worlds/wiege/teorainn/) for conquest, and is heavily involved in technology, manufacturing, and finance. Despite its nominally democratic government, it functions as a theocratic hierarchy in practice.
+Kex is expansionist in ambition, constantly eyeing neighboring [Teorainn]({{< ref "/worlds/wiege/teorainn" >}}) for conquest, and is heavily involved in technology, manufacturing, and finance. Despite its nominally democratic government, it functions as a theocratic hierarchy in practice.
 
 ## The Height Doctrine
 
@@ -35,6 +35,6 @@ This implies illicit mixing across the hierarchy — a grave social violation. I
 
 ## The War of Dominion
 
-Fifty years ago (circa 1070 4E), Kex prosecuted the War of Dominion — a military campaign that included the sacking and ritual desecration of [Noureddine](/worlds/wiege/noureddine/), the holy city of Ronahiya. The war culminated in the [Ritual of Sundered Day](/worlds/wiege/war-of-dominion/), which killed combatants on both sides and resurrected them as undead, creating the cursed megadungeon that now occupies the ruins.
+Fifty years ago (circa 1070 4E), Kex prosecuted the War of Dominion — a military campaign that included the sacking and ritual desecration of [Noureddine]({{< ref "/worlds/wiege/noureddine" >}}), the holy city of Ronahiya. The war culminated in the [Ritual of Sundered Day]({{< ref "/worlds/wiege/war-of-dominion" >}}), which killed combatants on both sides and resurrected them as undead, creating the cursed megadungeon that now occupies the ruins.
 
 The city's destruction was understood by Kex as a military and theological victory — the subordination of a rival divine order to Malabolous's hierarchy.

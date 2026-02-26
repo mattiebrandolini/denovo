@@ -1,7 +1,7 @@
 ---
 title: "The Coronal Jebrot"
 date: 2026-02-26
-description: "The supreme religious leader of Ronahiya's faith — lost to her goddess's afterlife during the [War of Dominion](/worlds/wiege/war-of-dominion/)."
+description: "The supreme religious leader of Ronahiya's faith — lost to her goddess's afterlife during the War of Dominion."
 tags: ["wiege", "noureddine", "ronahiya", "people", "war-of-dominion"]
 world: "Wiege"
 setting_era: "4th Era"
@@ -10,9 +10,9 @@ article_type: "person"
 draft: false
 ---
 
-The Coronal Jebrot was the supreme religious leader of the faith of Ronahiya, goddess of the sun. She held the highest seat in the most powerful centralized church dedicated to Ronahiya, based in [Noureddine](/worlds/wiege/noureddine/) at the height of its splendor.
+The Coronal Jebrot was the supreme religious leader of the faith of Ronahiya, goddess of the sun. She held the highest seat in the most powerful centralized church dedicated to Ronahiya, based in [Noureddine]({{< ref "/worlds/wiege/noureddine" >}}) at the height of its splendor.
 
-She was lost during the War of Dominion and the [Ritual of Sundered Day](/worlds/wiege/war-of-dominion/).
+She was lost during the War of Dominion and the [Ritual of Sundered Day]({{< ref "/worlds/wiege/war-of-dominion" >}}).
 
 ## Why She Is Not Undead
 
