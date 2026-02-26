@@ -9,7 +9,7 @@ article_type: "organization"
 draft: false
 ---
 
-The Vanguard is the Terran military campaign against the Dark Tapestry and the Great Old Ones. It operates outside the Laniakea Supercluster in the wider universe — most Terrans that outsiders encounter are Vanguard, whether Coro or Machina.
+The Vanguard is the Terran military campaign against the [Dark Tapestry](/worlds/the-dark-tapestry/) and the Great Old Ones. It operates outside the Laniakea Supercluster in the wider universe — most Terrans that outsiders encounter are Vanguard, whether Coro or Machina.
 
 ## Purpose
 
@@ -23,8 +23,8 @@ The Vanguard's most significant programs include:
 
 **Template-based Coro creation** — using exceptional individuals as biological patterns for new operatives. Templates are selected from the most accomplished Vanguard members, and new Coro are grown from their patterns. One of the Vanguard's cardinal rules prohibits informing a Coro of their template's identity, to prevent destabilizing self-perception.
 
-**The Nephilim project** — a fusion of Coro biology and Machina technology, producing operatives immune to magic. Nephilim represent the pinnacle of Vanguard enhancement and are uniquely suited for operations against the Dark Tapestry.
+**The [Nephilim](/worlds/the-terrans/) project** — a fusion of Coro biology and Machina technology, producing operatives immune to magic. Nephilim represent the pinnacle of Vanguard enhancement and are uniquely suited for operations against the Dark Tapestry.
 
-## Relationship to Wiege
+## Relationship to [Wiege](/worlds/wiege/)
 
 Wiege was once claimed by the Great Old One Shubnigoroth as a brood planet. The Vanguard has had presence on or near Wiege in various capacities — Van's banishment there was a Terran decision, and the subsequent dispatch of Nephilim to execute him represents ongoing Vanguard interest in the world.

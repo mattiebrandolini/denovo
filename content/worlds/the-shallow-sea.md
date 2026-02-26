@@ -10,9 +10,9 @@ article_type: "overview"
 draft: false
 ---
 
-The Shallow Sea is a mega-archipelago continent formed by the impact of a destroyed Great Old One called Black Star. The vast majority of its waters lie within the shallow Epipelagic (sunlight) and Mesopelagic (twilight) zones, surrounded by the deep Abyssopelagic zone. The technological and cultural level ranges from colonial to Enlightenment-era Earth.
+The Shallow Sea is a mega-archipelago continent formed by the impact of a destroyed [Great Old One](/worlds/the-dark-tapestry/) called Black Star. The vast majority of its waters lie within the shallow Epipelagic (sunlight) and Mesopelagic (twilight) zones, surrounded by the deep Abyssopelagic zone. The technological and cultural level ranges from colonial to Enlightenment-era Earth.
 
-The setting is the darker aftermath of a previous civilization's destruction. Before the apocalypse, a civilization existed here in contact with the Terran Vanguard, possessing knowledge and capabilities that are now lost. Black Star's death — and the psychic backlash of its failed resurrection — shattered that world and remade what remained into something bleaker.
+The setting is the darker aftermath of a previous civilization's destruction. Before the apocalypse, a civilization existed here in contact with the [Terran](/worlds/the-terrans/) [Vanguard](/worlds/the-vanguard/), possessing knowledge and capabilities that are now lost. Black Star's death — and the psychic backlash of its failed resurrection — shattered that world and remade what remained into something bleaker.
 
 ## Geography
 
@@ -37,4 +37,4 @@ Among the remnants of the previous civilization are structures that predate the 
 
 ## Tone
 
-The Shallow Sea is bleaker and more contained than Wiege — an isolated world dealing with the immediate aftermath of cosmic violence. The threats are closer, the resources thinner, and the history shorter but more raw. Where Wiege has had millennia to develop complex geopolitics, the Shallow Sea is still in the early stages of rebuilding from something terrible.
+The Shallow Sea is bleaker and more contained than [Wiege](/worlds/wiege/) — an isolated world dealing with the immediate aftermath of cosmic violence. The threats are closer, the resources thinner, and the history shorter but more raw. Where Wiege has had millennia to develop complex geopolitics, the Shallow Sea is still in the early stages of rebuilding from something terrible.

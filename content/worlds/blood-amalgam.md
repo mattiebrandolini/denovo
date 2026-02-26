@@ -19,7 +19,7 @@ Blood amalgams are substantially more powerful than standard undead, more stable
 
 ## Known Blood Amalgams
 
-**The Sanguine Sovereign** — a blood amalgam of particular significance in the modern era of Wiege (Long Shot timeline, 20xx). Leader of a nation of undead.
+**The [Sanguine Sovereign](/worlds/wiege/)** — a blood amalgam of particular significance in the modern era of [Wiege](/worlds/wiege/) (Long Shot timeline, 20xx). Leader of a nation of undead.
 
 ## The Cost
 
