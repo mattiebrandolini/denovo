@@ -39,9 +39,13 @@ theme = 'denovo'
     url = "/tools/"
     weight = 5
   [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 6
+  [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 6
+    weight = 7
 
 [outputs]
   home = ["HTML", "RSS"]

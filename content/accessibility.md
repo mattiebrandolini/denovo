@@ -1,5 +1,6 @@
 ---
 title: "Accessibility"
+search_exclude: true
 ---
 
 ## Commitment

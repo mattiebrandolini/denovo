@@ -128,6 +128,20 @@ All a11y logic is in `baseof.html` bottom `<script>` block. Settings use `data-*
 - **Tags:** Cross-section discovery. Used everywhere.
 - **Series:** Multi-part content with automatic prev/next navigation. Weighted 2x in related content.
 
+
+
+## Search (Pagefind)
+
+Full-text search powered by [Pagefind](https://pagefind.app/). Runs at build time, generates a static index. No server needed.
+
+- Pagefind is installed and run in CI after Hugo builds (see `.github/workflows/hugo.yml`)
+- Index output goes to `public/pagefind/` (not committed, generated fresh each deploy)
+- Search page: `content/search.md`
+- Search UI styling: CSS overrides in `style.css` under "PAGEFIND SEARCH OVERRIDES"
+- Only content pages are indexed (list pages, taxonomy pages, homepage, 404 all excluded)
+- Filters available: section (auto from Hugo section), tags (from frontmatter)
+- To exclude a page from search: add `search_exclude: true` to frontmatter
+- Local testing: `hugo && pagefind --site public --output-path public/pagefind`
 ## Quality Gates (CI)
 
 On every push, before deploy:

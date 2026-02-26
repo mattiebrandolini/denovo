@@ -1,5 +1,6 @@
 ---
 title: "Licenses & Attribution"
+search_exclude: true
 ---
 
 ## Original Content

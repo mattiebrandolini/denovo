@@ -1,7 +1,8 @@
 {{ define "main" }}
-<article{{ with .Params.lang }} lang="{{ . }}"{{ end }}>
+<article{{ with .Params.lang }} lang="{{ . }}"{{ end }}{{ with .Params.search_exclude }} data-pagefind-ignore{{ end }}>
   <div class="page-header">
-    <h1>{{ .Title }}</h1>
+    <h1 data-pagefind-meta="title">{{ .Title }}</h1>
+    {{ with .CurrentSection }}<span data-pagefind-filter="section" hidden>{{ .Title }}</span>{{ end }}
     <div class="page-meta">
       {{ .Date.Format "January 2, 2006" }}
       {{ with .Lastmod }}{{ if ne . $.Date }}· Updated {{ .Format "January 2, 2006" }}{{ end }}{{ end }}
@@ -10,7 +11,7 @@
     </div>
     {{ with .Params.tags }}
     <div class="tag-list">
-      {{ range . }}<a href="{{ "/tags/" | absURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>{{ end }}
+      {{ range . }}<a href="{{ "/tags/" | absURL }}{{ . | urlize }}/" class="tag-pill" data-pagefind-filter="tag">{{ . }}</a>{{ end }}
     </div>
     {{ end }}
     {{ with .Params.series }}
