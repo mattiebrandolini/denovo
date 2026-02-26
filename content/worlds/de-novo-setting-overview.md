@@ -6,6 +6,7 @@ tags: ["de-novo", "overview", "cosmology"]
 world: "Shared"
 knowledge: "common"
 toc: true
+article_type: "overview"
 draft: false
 ---
 

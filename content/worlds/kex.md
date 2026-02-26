@@ -6,6 +6,7 @@ tags: ["wiege", "kex", "malabolous", "nations", "hierarchy"]
 world: "Wiege"
 knowledge: "common"
 toc: true
+article_type: "nation"
 draft: false
 ---
 

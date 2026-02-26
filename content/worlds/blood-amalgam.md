@@ -5,6 +5,7 @@ description: "An undead being of extraordinary power, constructed through ritual
 tags: ["wiege", "undead", "concepts", "blood-amalgam"]
 world: "Wiege"
 knowledge: "uncommon"
+article_type: "concept"
 draft: false
 ---
 

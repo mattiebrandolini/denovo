@@ -6,6 +6,7 @@ tags: ["wiege", "noureddine", "ronahiya", "people"]
 world: "Wiege"
 setting_era: "4th Era (1120)"
 knowledge: "player"
+article_type: "person"
 draft: false
 ---
 

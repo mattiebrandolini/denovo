@@ -6,6 +6,7 @@ tags: ["wiege", "noureddine", "kex", "people", "war-of-dominion"]
 world: "Wiege"
 setting_era: "4th Era (1120)"
 knowledge: "player"
+article_type: "person"
 draft: false
 ---
 

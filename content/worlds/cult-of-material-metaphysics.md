@@ -6,6 +6,7 @@ tags: ["wiege", "van", "organizations", "cult"]
 world: "Wiege"
 setting_era: "Modern (20xx)"
 knowledge: "player"
+article_type: "organization"
 draft: false
 ---
 

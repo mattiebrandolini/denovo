@@ -5,6 +5,7 @@ description: "The existential threat beyond the stars — Great Old Ones, their 
 tags: ["dark-tapestry", "cosmology", "great-old-ones"]
 world: "Shared"
 knowledge: "uncommon"
+article_type: "concept"
 draft: false
 ---
 

@@ -6,6 +6,7 @@ tags: ["wiege", "overview", "nations"]
 world: "Wiege"
 knowledge: "common"
 toc: true
+article_type: "overview"
 draft: false
 ---
 

@@ -6,6 +6,7 @@ tags: ["terrans", "coro", "machina", "cosmology", "vanguard"]
 world: "Shared"
 knowledge: "uncommon"
 toc: true
+article_type: "overview"
 draft: false
 ---
 

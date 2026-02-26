@@ -5,6 +5,7 @@ description: "Formerly Ellan — people permanently warped by the psychic backla
 tags: ["shallow-sea", "shattered", "people", "psychic"]
 world: "Shallow Sea"
 knowledge: "common"
+article_type: "concept"
 draft: false
 ---
 

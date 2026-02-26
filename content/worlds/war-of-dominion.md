@@ -6,6 +6,7 @@ tags: ["wiege", "war-of-dominion", "kex", "noureddine", "ronahiya", "history"]
 world: "Wiege"
 setting_era: "4th Era (~1070)"
 knowledge: "common"
+article_type: "history"
 draft: false
 ---
 

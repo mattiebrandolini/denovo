@@ -1439,3 +1439,46 @@ body.layout-tools .container {
   border-color: #9a8aba;
   color: #9a8aba;
 }
+
+
+/* ============================= */
+/* WIKI CATEGORY LAYOUT          */
+/* ============================= */
+
+.wiki-category {
+  margin-bottom: 2.5rem;
+}
+
+.wiki-category h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.category-desc {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 0.8rem;
+  font-style: italic;
+}
+
+.wiki-category .post-list li a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.post-meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.1rem 0;
+}
+
+.post-meta-line .knowledge-badge,
+.post-meta-line .world-badge,
+.post-meta-line .era-badge {
+  font-size: 0.6rem;
+  padding: 0.1rem 0.35rem;
+}

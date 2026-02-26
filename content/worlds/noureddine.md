@@ -7,6 +7,7 @@ world: "Wiege"
 setting_era: "4th Era (1120)"
 knowledge: "common"
 toc: true
+article_type: "location"
 draft: false
 ---
 

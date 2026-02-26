@@ -5,6 +5,7 @@ description: "The Terran military campaign against the Dark Tapestry — the for
 tags: ["terrans", "vanguard", "dark-tapestry", "cosmology", "organizations"]
 world: "Shared"
 knowledge: "uncommon"
+article_type: "organization"
 draft: false
 ---
 

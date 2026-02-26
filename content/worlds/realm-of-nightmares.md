@@ -5,6 +5,7 @@ description: "A dimensional prison where Van was banished for millennia — and 
 tags: ["wiege", "van", "dark-tapestry", "locations", "cosmology"]
 world: "Shared"
 knowledge: "uncommon"
+article_type: "location"
 draft: false
 ---
 

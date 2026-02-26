@@ -6,6 +6,7 @@ tags: ["wiege", "deities", "malabolous", "kex", "hierarchy"]
 world: "Wiege"
 knowledge: "common"
 toc: true
+article_type: "deity"
 draft: false
 ---
 

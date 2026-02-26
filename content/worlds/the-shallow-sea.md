@@ -6,6 +6,7 @@ tags: ["shallow-sea", "overview", "black-star"]
 world: "Shallow Sea"
 knowledge: "common"
 toc: true
+article_type: "overview"
 draft: false
 ---
 

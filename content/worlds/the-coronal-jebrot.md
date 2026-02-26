@@ -6,6 +6,7 @@ tags: ["wiege", "noureddine", "ronahiya", "people", "war-of-dominion"]
 world: "Wiege"
 setting_era: "4th Era"
 knowledge: "uncommon"
+article_type: "person"
 draft: false
 ---
 

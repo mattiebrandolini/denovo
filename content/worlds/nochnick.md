@@ -5,6 +5,7 @@ description: "An orcish nation in the Overdark Forest — horizontal, egalitaria
 tags: ["wiege", "nochnick", "nations", "orc"]
 world: "Wiege"
 knowledge: "common"
+article_type: "nation"
 draft: false
 ---
 

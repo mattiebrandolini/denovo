@@ -5,6 +5,7 @@ description: "The Nation of Spies — a halfling-majority democracy that has sur
 tags: ["wiege", "teorainn", "nations", "halfling"]
 world: "Wiege"
 knowledge: "common"
+article_type: "nation"
 draft: false
 ---
 

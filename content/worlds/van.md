@@ -6,6 +6,7 @@ tags: ["terrans", "coro", "vanguard", "wiege", "van"]
 world: "Shared"
 knowledge: "player"
 toc: true
+article_type: "person"
 draft: false
 ---
 

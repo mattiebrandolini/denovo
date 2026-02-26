@@ -1,0 +1,70 @@
+{{ define "main" }}
+<div data-pagefind-ignore>
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+</div>
+
+{{ if .Content }}
+<div class="section-intro">
+  {{ .Content }}
+</div>
+{{ end }}
+
+{{ $pages := .Pages }}
+{{ $types := slice
+  (dict "key" "overview" "label" "Overviews" "desc" "Starting points for the settings and their cosmology.")
+  (dict "key" "nation" "label" "Nations" "desc" "The countries and peoples of the world.")
+  (dict "key" "person" "label" "People" "desc" "Individuals of note — heroes, villains, witnesses, and the complicated.")
+  (dict "key" "deity" "label" "Deities" "desc" "The gods and the theologies built around them.")
+  (dict "key" "organization" "label" "Organizations" "desc" "Factions, bureaus, cults, and the structures people build.")
+  (dict "key" "location" "label" "Locations" "desc" "Places that matter — holy cities, dimensional prisons, and the ruins between.")
+  (dict "key" "concept" "label" "Concepts" "desc" "The forces, phenomena, and ideas that shape the settings.")
+  (dict "key" "history" "label" "History" "desc" "Wars, cataclysms, and the events that left marks.")
+}}
+
+{{ range $types }}
+  {{ $grouped := where $pages "Params.article_type" .key }}
+  {{ if $grouped }}
+  <div class="wiki-category">
+    <h2 id="{{ .key }}">{{ .label }}</h2>
+    <p class="category-desc">{{ .desc }}</p>
+    <ul class="post-list">
+      {{ range $grouped }}
+      <li>
+        <a href="{{ .RelPermalink }}">
+          <div class="post-title">{{ .Title }}</div>
+          <div class="post-meta-line">
+            {{ with .Params.knowledge }}<span class="knowledge-badge knowledge-{{ . }}">{{ . }}</span>{{ end }}
+            {{ with .Params.world }}<span class="world-badge">{{ . }}</span>{{ end }}
+            {{ with .Params.setting_era }}<span class="era-badge">{{ . }}</span>{{ end }}
+          </div>
+          {{ with .Params.description }}<div class="post-summary">{{ . }}</div>{{ end }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+{{ end }}
+
+{{/* Catch anything without an article_type */}}
+{{ $uncategorized := where $pages "Params.article_type" nil }}
+{{ if $uncategorized }}
+<div class="wiki-category">
+  <h2 id="other">Other</h2>
+  <ul class="post-list">
+    {{ range $uncategorized }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        <div class="post-title">{{ .Title }}</div>
+        {{ with .Params.description }}<div class="post-summary">{{ . }}</div>{{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
+
+</div>
+{{ end }}
